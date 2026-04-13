@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Game Library</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="header">
+  <div class="controls">
+
+    <input id="search" placeholder="Search game...">
+
+    <div id="platformFilters">
+      <label class="pf-item">
+        <input type="checkbox" value="pc">
+        <span>🖥 PC (<span id="count-pc">0</span>)</span>
+      </label>
+
+      <label class="pf-item">
+        <input type="checkbox" value="ps">
+        <span>🎮 PS (<span id="count-ps">0</span>)</span>
+      </label>
+    </div>
+
+    <select id="sort">
+      <option value="none">Sort</option>
+      <option value="score_desc">Score ↓</option>
+      <option value="score_asc">Score ↑</option>
+      <option value="name_asc">Name A-Z</option>
+      <option value="name_desc">Name Z-A</option>
+    </select>
+
+  </div>
+</div>
+
+<div id="app"></div>
+
+<script src="app.js"></script>
+</body>
+</html>

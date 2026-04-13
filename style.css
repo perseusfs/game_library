@@ -1,0 +1,177 @@
+body {
+  font-family: system-ui, Arial;
+  background: #0f172a;
+  color: white;
+  margin: 0;
+}
+
+/* HEADER */
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #1e293b;
+  padding: 12px 16px;
+  border-radius: 12px;
+}
+
+/* SEARCH */
+
+#search {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  width: 220px;
+  background: #334155;
+  color: white;
+}
+
+/* PLATFORM FILTER */
+
+#platformFilters {
+  display: flex;
+  gap: 10px;
+}
+
+.pf-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #334155;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.pf-item:hover {
+  background: #475569;
+}
+
+/* CHECKBOX */
+
+.pf-item input {
+  cursor: pointer;
+}
+
+/* SORT */
+
+#sort {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #334155;
+  color: white;
+  cursor: pointer;
+}
+
+/* GRID */
+
+#app {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  gap: 20px;
+  padding: 20px;
+}
+
+/* CARD */
+
+/* overlay container */
+.card {
+  position: relative;
+}
+
+/* overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.2s;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* hover */
+.card:hover .overlay {
+  opacity: 1;
+}
+
+/* küçük info satırları */
+.overlay span {
+  background: rgba(255,255,255,0.1);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+/* INFO */
+
+.info {
+  padding: 10px;
+}
+
+.title {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.score {
+  font-size: 12px;
+  color: #38bdf8;
+}
+
+/* BADGES */
+
+.badges {
+  margin-top: 6px;
+}
+
+.badge {
+  display: inline-block;
+  background: #334155;
+  padding: 3px 7px;
+  border-radius: 6px;
+  font-size: 10px;
+  margin-right: 4px;
+}
+
+/* RESPONSIVE (küçük ama önemli) */
+
+@media (max-width: 600px) {
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #search {
+    width: 100%;
+  }
+
+  #app {
+    grid-template-columns: repeat(auto-fill, 150px);
+  }
+
+  .card img {
+    height: 200px;
+  }
+}

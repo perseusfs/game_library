@@ -1,0 +1,7944 @@
+[
+  {
+    "name": "Life is Strange 2",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Cult of the Lamb",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [
+      "Pilgrim Pack"
+    ],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "No Man's Sky",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Assassin's Creed 4 Black Flag",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps3",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Fallout 4",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Red Dead Redemption",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps3",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": "Game of the Year Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Elden Ring",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Hogwarts Legacy",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": "Digital Deluxe Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Wolfenstein The New Order",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps3",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Wolfenstein The Old Blood",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Wolfenstein II The New Colossus",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Wolfenstein Youngblood",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "NASCAR 25",
+    "copies": [
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Anno 1800",
+    "copies": [
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": "Deluxe Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Assassin's Creed Origins",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": "Gold Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Far Cry New Dawn",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": "Deluxe Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Watch Dogs Legion",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "My First Gran Turismo",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Stardew Valley",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      },
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Back 4 Blood",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": "Ultimate Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Sid Meier’s Civilization VI",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      },
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [
+      "Leader Pass",
+      "Portugal Pack",
+      "Vietnam & Kublai Khan Pack",
+      "Babylon Pack",
+      "Catherine de Medici Persona Pack",
+      "Byzantium & Gaul Pack",
+      "New Frontier Pass",
+      "Ethiopia Pack",
+      "Teddy Roosevelt Persona Pack",
+      "Maya and Gran Colombia Pack",
+      "Gathering Storm",
+      "Rise and Fall",
+      "Khmer and Indonesia Civilization and Scenario Pack",
+      "Nubia Civilization and Scenario Pack",
+      "Persia and Macedon Civilization and Scenario Pack",
+      "Australia Civilization and Scenario Pack",
+      "Poland Civilization and Scenario Pack",
+      "Vikings Scenario Pack"
+    ],
+    "edition": "Platinum Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "The Dark Pictures Anthology Man of Medan",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "NBA 2K25",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": "Tournament Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Hotline Miami",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Snooker Nation Championship",
+    "copies": [
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Formula Retro Racing",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "A Plague Tale Innocence",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Forza Horizon 5",
+    "copies": [
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": "Premium Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Bus Driving Simulator EVO",
+    "copies": [
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Alaskan Road Truckers",
+    "copies": [
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": "Highway Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "MudRunner",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      },
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Assetto Corsa Competizione",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [
+      "British GT Pack",
+      "Intercontinental GT Pack",
+      "24h Nurburgring Pack",
+      "GT4 Pack",
+      "American Track Pack",
+      "2023 GT World Challenge Pack",
+      "2020GT World Challenge Pack"
+    ],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Need for Speed Unbound",
+    "copies": [
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "God of War Ragnarök",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Battlefield V",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": "Definivite Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Need for Speed Hot Pursuit Remastered",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Bus Simulator",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Gran Turismo 7",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "The Witcher 3 Wild Hunt",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "EA SPORTS FC 25",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Call of Duty Modern Warfare Remastered",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Outward",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": "Definitive Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Child of Light",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Call of Duty Modern Warfare 2 Campaign Remastered",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Burnout Paradise Remastered",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Uncharted 4 A Thief’s End",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Uncharted The Lost Legacy",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Anomaly Agent",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "The Crew Motorfest",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Battlefield 2042",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Mafia",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": "Definitive Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Mafia II",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps3",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": [
+      "Definitive Edition",
+      "Digital Deluxe Edition"
+    ],
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Mafia III",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": "Definitive Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Sekiro Shadows Die Twice",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": "Game of the Year Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "WRC 9 FIA World Rally Championship",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Ride 2",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Need for Speed Heat",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Warframe",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Hades",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Minecraft Dungeons",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "DAVE THE DIVER",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "EA SPORTS FC 24",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "War Thunder",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      },
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "WORLD OF WARSHIPS LEGENDS",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "F1 Manager 2023",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Batman Arkham Knight",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      },
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [
+      "Season of Infamy: Most Wanted Expansion",
+      "A Matter of Family",
+      "Crime Fighter Challenge Pack 1",
+      "Crime Fighter Challenge Pack 2",
+      "Crime Fighter Challenge Pack 3",
+      "Crime Fighter Challenge Pack 4",
+      "Crime Fighter Challenge Pack 5",
+      "Crime Fighter Challenge Pack 6",
+      "Original Arkham Batmobile",
+      "WayneTech Track Pack",
+      "Catwoman's Revenge",
+      "GCPD Lockdown",
+      "A Flip of a Coin",
+      "Scarecrow Nightmare Missions",
+      "Red Hood Storypack"
+    ],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Batman Arkham Asylum",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      },
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Batman Arkham City",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      },
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps3",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "NBA 2K Playgrounds 2",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "F1 23",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "PowerWash Simulator",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Disco Elysium",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      },
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": "The Final Cut",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Assassin's Creed Valhalla",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Tropico 5",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Marvel's Spider-Man Miles Morales",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Tomb Raider",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      },
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      },
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": [
+      "Definitive Edition",
+      "Game of the Year Edition"
+    ],
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "NASCAR Heat 5",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "God of War",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "South Park The Fractured but Whole",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "SnowRunner",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Dead Cells",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Ghost of Tsushima",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": "Director's Cut",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "The Quarry",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "It Takes Two",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "TEKKEN 2",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "MotoGP 22",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "L.A. Noire",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps3",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "South Park The Stick of Truth",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Dishonored",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": "Definitive Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Grand Theft Auto V",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      },
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps3",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [
+      "Great White Shark Card Bundle"
+    ],
+    "edition": "Premium Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "GRID Legends",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "NBA 2K23",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "The Last of Us Remastered",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Uncharted Drake's Fortune",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Uncharted 2 Among The Thieves",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Uncharted 3 Drake's Deception",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps3",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Divine Knockout (DKO)",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": "Founders Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Biomutant",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Mass Effect",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": "Legendary Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "The Last of Us Part II",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "HOT WHEELS UNLEASHED",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": "Game of the Year Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Little Nightmares",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Tony Hawk's Pro Skater 1",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Tony Hawk's Pro Skater 2",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Crash Bandicoot 4 It’s About Time",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Arcadegeddon",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Unravel Two",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Prototype 2",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "STAR WARS Jedi Fallen Order",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Control",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      },
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Assetto Corsa",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": "Ultimate Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Gran Turismo Sport",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [
+      "Mercedes-AMG F1 W08 EQ Power+ (Color Variation) 2017"
+    ],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Battlefield 1",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Kingdom Come Deliverance",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": "Royal Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "eFootball PES 2021",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": "Lite",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "A Way Out",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Horizon Zero Dawn",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": "Complete Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "The Witness",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      },
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Rez Infinite",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Paper Beast",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Moss",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Enter the Gungeon",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      },
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "ABZU",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      },
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Subnautica",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      },
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "ASTRO BOT Rescue Mission",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Thumper",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Ratchet & Clank",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Deus Ex Mankind Divided",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      },
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "STEEP",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      },
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Need for Speed",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": "Deluxe Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "NBA 2K21",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      },
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Marvel’s Spider-Man",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": "Game of the Year Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "F1 2020",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Destiny 2",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Metal Gear Solid V The Phantom Pain",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps3",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Red Dead Redemption 2",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "World of Tanks Modern Armor",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Watch Dogs 2",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      },
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "The Crew 2",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Assassin's Creed Odyssey",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Dying Light",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Rocket League",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      },
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Thronefall",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Initial Drift Online",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "SpaceEngine",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Super WorldBox",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "V Rising",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "REMATCH",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Europa Universalis IV",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "ENFYNYTY SANDBOX",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Tomorrow's Land",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Latent Experience",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Cosmic Decode",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Half-Life 2 DownFall",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Half-Life 2 Update",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Half-Life 2",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Half-Life",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Mark of the Ninja Remastered",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Kingsway",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Death Road to Canada",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "FEZ",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      },
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Barro F",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Alan Wake",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Baba Is You",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Death Trash",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Saints Row The Third",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [
+      "Season Pass",
+      "Genkibowl VII",
+      "Gangstas in Space",
+      "Thr Trouble with Clones"
+    ],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Buggy Game",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Stronghold Crusader HD",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Biped",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Retrowave",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [
+      "Gold",
+      "Map",
+      "Custom Music"
+    ],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Golf With Your Friends",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Pummel Party",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Heave Ho",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Circle Empires Rivals",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Kentucky Route Zero",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Hitman Absolution",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Yes, Your Grace",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Shiny Ski Resort",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Pocket League Story",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Ultimate Racing 2D 2",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Trailmakers",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Grand Prix Story",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Graveyard Keeper",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Ultimate Chicken Horse",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "PHOGS!",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Totally Reliable Delivery Service",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Witch It",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Project Zomboid",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "No one lives under the lighthouse",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "High On Life",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Bad North",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      },
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Hellblade Senua's Sacrifice",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Arise",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Darkwood",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Mount & Blade II Bannerlord",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Blazing Sails",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "RoadRace",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "The Escapists 2",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      },
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "FAR Changing Tides",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "The Long Drive",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Sniper Elite 4",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Pure Rock Crawling",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "ShellShock Live",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Prison Architect",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      },
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "FPS Chess",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Battlefield 1 Revolution",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "theHunter Call of the Wild",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [
+      "ATV SABER 4X4"
+    ],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Northgard",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": "Definitive Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Kingdom Two Crowns",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Splendor",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Garfield Kart - Furious racing",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Stick Fight The Game",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Overcooked! 2",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      },
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "The Pedestrian",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Gunpoint",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Valheim",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Ultimate Racing 2D",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Mini Motor Racing X",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Muck",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Soccer Online Ball 3D",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Mini Motorways",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "BELOW",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Mini Metro",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Bloons TD 6",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Patchwork",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Friendly Fire",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "PICO PARK",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Brawlhalla",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Starbound",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Human Fall Flat",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Tabletop Simulator",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Motorsport Manager",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Poly Bridge",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Company of Heroes 2",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [
+      "Ardennes Assault"
+    ],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Ticket to Ride",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      },
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Tropico 6",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Cities Skylines",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      },
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Suzerain",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Five Dates",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "The Complex",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "The Bunker",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Fall Guys",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Age of History II",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "KARDS",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Among Us",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      },
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "RISK Global Domination",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "NBA 2K20",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Age of Empires II",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      },
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Total War SHOGUN 2",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Manual Samuel",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Autobahn Police Simulator",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Deiland",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Drawful 2",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Spec Ops The Line",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": "ROW Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Don't Starve Together",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Crusader Kings II",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [
+      "The Reaper's Due Limited Free Promotional Package"
+    ],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "The Uncertain Last Quiet Day",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Battlefield Bad Company 2",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "eFootball PES 2020",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": "Lite Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Zombie Driver HD",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Max Payne 3",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Sherlock Holmes The Devil's Daughter",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Sherlock Holmes Crimes and Punishments",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Catan Universe",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Serial Cleaner",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Finding Paradise",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "A Bird Story",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "DiRT Rally",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "The Messenger",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Brothers - A Tale of Two Sons",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Firewatch",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "POSTAL 2",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Burnout Paradise",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": "The Ultimate Box",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Observer",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      },
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "GRIS",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "FAR Lone Sails",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Hearts of Iron IV",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Verdun",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Transformice",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Euro Truck Simulator 2",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Guacamelee!",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": "Super Turbo Championship Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Divide by Sheep",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Fearless Fantasy",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Age of Wonders III",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "The Long Dark",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      },
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Trove",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Business Tour - Online Multiplayer Board Game",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Raft",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Terraria",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Crossout",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "The Mean Greens - Plastic Warfare",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "The Forest",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Grid 2",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [
+      "Bathurst Track Pack\"",
+      "Spa-Francorchamps Track Pack\"",
+      "Demolition Derby Pack"
+    ],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Life is Strange Episode 1",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "To The Moon",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Deponia The Complete Journey",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      },
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Braveland Free",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Kerbal Space Program",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Undertale",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Max Payne 2 The Fall of Max Payne",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Grand Theft Auto IV",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": "Complete Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Portal 2",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Sins of a Solar Empire Rebellion",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Skillshot City",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "LEGO - The Hobbit",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Counter-Strike Global Offensive",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": "Free Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Murderous Pursuits",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Metro 2033",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Cube Escape Paradox",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Evolvation",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Blast the Past",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Orwell",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Mount and Blade Warband",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "World of Warplanes",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Civilization V",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [
+      "Scrambled Nations Map Pack"
+    ],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "World of Warships",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "World of Tanks Blitz",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "steam"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Shadow of the Tomb Raider",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      },
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": "Definitive Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Rise of the Tomb Raider",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      },
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [
+      "Season Pass"
+    ],
+    "edition": "20 Year Celebration",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "The Vanishing of Ethan Carter",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Saints Row The Third Remastered",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Minit",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Train Sim World 2",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Obduction",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Ironcast",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Bridge Constructor The Walking Dead",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "The Spectrum Retreat",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Horizon Chase Turbo",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Sonic Mania",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Hell is other demons",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Frostpunk",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Scavengers",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Ken Follett's The Pillars of the Earth",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "The First Tree",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Tales of the Neon Sea",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Creature in the Well",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "The Fall",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Sunless Sea",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "For The King",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Metro Last Light Redux",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      },
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Dandara",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": "Trials of Fear Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Galactic Civilizations III",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Crying Suns",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Jurassic World Evolution",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Solitairica",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Stranded Deep",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "My Time At Portia",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Oddworld New 'n' Tasty",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "SLUDGE LIFE",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Pillars of Eternity",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": "Definitive Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Tyranny",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": "Gold Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Dungeons 3",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Blair Witch",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Ghostbusters The Video Game Remastered",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Layers of Fear 2",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Costume Quest 2",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Kingdom New Lands",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Amnesia A Machine for Pigs",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Rising Storm 2 Vietnam",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "RollerCoaster Tycoon 3",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": "Complete Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Football Manager 2020",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Stick It To The Man!",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Where The Water Tastes Like Wine",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Railway Empire",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Into the Breach",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Shadowrun Returns",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Shadowrun Dragonfall",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": "Director's Cut",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Shadowrun Hong Kong",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": "Extended Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "HITMAN",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "God's Trigger",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "A Total War Saga TROY",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Alto's Adventure",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Alto's Odyssey",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Remnant From the Ashes",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Superbrothers Sword & Sworcery EP",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Tacoma",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Next Up Hero",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Lifeless Planet",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": "Premier Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Killing Floor 2",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Hue",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "AER Memories of Old",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Pathway",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "SAMURAI SHODOWN",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "SAMURAI SHODOWN II",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "SAMURAI SHODOWN III",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "SAMURAI SHODOWN IV Amakusa's Revenge",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "SAMURAI SHODOWN V",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "SAMURAI SHODOWN V Special",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "SAMURAI SHODOWN V Perfect",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "ARK Survival Evolved",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Overcooked",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Borderlands 2",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Borderlands The Pre-Sequel",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Death Coming",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Amnesia The Dark Descent",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Wheels of Aurelia",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Just Cause 4",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Close To The Sun",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "World War Z",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "The Stanley Parable",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Watch Dogs",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "A Short Hike",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Anodyne 2 Return To Dust",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Mutazione",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "GoNNER",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Offworld Trading Company",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "InnerSpace",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Assassin's Creed Syndicate",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Faeria",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Aztez",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Carcassonne",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Farming Simulator 19",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "The Bridge",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Horace",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Sundered",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": "Eldritch Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Darksiders",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": "Warmastered Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Darksiders II",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": "Deathinitive Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Hello Neighbor",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "The Talos Principle",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Shadow Tactics Blades of the Shogun",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "FTL Faster Than Light",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Totally Accurate Battle Simulator",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "SUPERHOT",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "TowerFall Ascension",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "The Escapists",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "The Wolf Among Us",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Jotun",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": "Valhalla Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "RAYMAN LEGENDS",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Nuclear Throne",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "RUINER",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Costume Quest",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "SOMA",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Layers of Fear",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": "Masterpiece Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Q.U.B.E. 2",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Alan Wake’s American Nightmare",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Surviving Mars",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Everything",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Metro 2033 Redux",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      },
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Metro Exodus",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [
+      "The Two Colonels",
+      "Sam's Story"
+    ],
+    "edition": "Gold Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Lego Batman The Videogame",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Lego Batman 2 DC Super Heroes",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Lego Batman 3 Beyond Gotham",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "INSIDE",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Celeste",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Hyper Light Drifter",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Mutant Year Zero Road to Eden",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Moonlighter",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "This War of Mine",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Dauntless",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Stories Untold",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "World of Goo",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Transistor",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Oxenfree",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Thimbleweed Park",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "AXIOM VERGE",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "The Jackbox Party Pack",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "What Remains of Edith Finch",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Super Meat Boy",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "digital",
+        "store": "epic"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "spider man 2",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "need for speed hot pursuit",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "world tours 2 golf",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "balance",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "bundesliga manager X elfmeter",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "vr world cup soccer tournament",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "worms blast",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "nascar thunder 2003",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "winter sports 2009",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "fifa 99",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "air offensive art of flying",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "toyota trafik oyunu",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "zombex",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "babylon 5",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "dead city",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "botonoid",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "west bang",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "baga",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "grand theft auto san andreas",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "need for speed 2 special edition",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "hugo cannon cruise",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "fish's revenge",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "shrek 2 team action",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "taz wanted",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Airship",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "scooby-doo 2 monsters unleashed",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "neighbors from hell 2",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "garfield 1",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "chicken run",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "virtua cop 2",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "digimon world 2",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "hugo 2",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "need for speed underground",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "minions of mirth",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "elimination - justin hoffman",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "hibis domino 1.99 - karibicom",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "puzznic - michael heyduk",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "quadragon - paul wlodarski",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "rockfall - tim and andy",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "sokoban 2k - brian kent",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "tales of monkey island",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "grotesque tactics",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "toyland racing",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "combat mission beyond overlord",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "harry potter and the chamber of secrets",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "ultimate ride coaster deluxe",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "arcanum",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Hugo evil mirror",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Need For Speed Underground 2",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Need For Speed Most Wanted",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "FIFA 07",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "FIFA 09",
+    "copies": [
+      {
+        "platform": "pc",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "FIFA 20",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "The Last of Us",
+    "copies": [
+      {
+        "platform": "ps3",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Pro Evolution Soccer 2013",
+    "copies": [
+      {
+        "platform": "ps3",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Assassin's Creed Brotherhood",
+    "copies": [
+      {
+        "platform": "ps3",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Call of Duty World at War",
+    "copies": [
+      {
+        "platform": "ps3",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Gran Turismo 5",
+    "copies": [
+      {
+        "platform": "ps3",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": "Academy Edition",
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Farcry 3",
+    "copies": [
+      {
+        "platform": "ps3",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Battlefield 3",
+    "copies": [
+      {
+        "platform": "ps3",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Cal of Duty Black Ops",
+    "copies": [
+      {
+        "platform": "ps3",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Need For Speed Shift",
+    "copies": [
+      {
+        "platform": "ps3",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "NBA 2K15",
+    "copies": [
+      {
+        "platform": "ps3",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Just Cause 3",
+    "copies": [
+      {
+        "platform": "ps3",
+        "type": "physical"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Alice Madness Returns",
+    "copies": [
+      {
+        "platform": "ps3",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Journey",
+    "copies": [
+      {
+        "platform": "ps3",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "NBA 2K18",
+    "copies": [
+      {
+        "platform": "ps3",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "F1 2013",
+    "copies": [
+      {
+        "platform": "ps3",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Call of Duty Modern Warfare 2",
+    "copies": [
+      {
+        "platform": "ps3",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "FIFA 17",
+    "copies": [
+      {
+        "platform": "ps3",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Alien Isolation",
+    "copies": [
+      {
+        "platform": "ps3",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "Need For Speed Most Wanted 2012",
+    "copies": [
+      {
+        "platform": "ps3",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  },
+  {
+    "name": "NBA 2K16",
+    "copies": [
+      {
+        "platform": "ps3",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": null,
+    "image": null,
+    "score": null
+  }
+]
