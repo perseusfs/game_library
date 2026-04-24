@@ -2958,6 +2958,41 @@
     "id": "alan-wake"
   },
   {
+    "name": "Alan Wake Remastered",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      },
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": [],
+    "image": "https://media.rawg.io/media/games/5c0/5c0dd63002cb23f804aab327d40ef119.jpg",
+    "score": 80,
+    "id": "alan-wake-remastered"
+  },
+  {
+    "name": "Alan Wake 2",
+    "copies": [
+      {
+        "platform": "ps5",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": [],
+    "image": "https://media.rawg.io/media/games/5c0/5c0dd63002cb23f804aab327d40ef119.jpg",
+    "score": 80,
+    "id": "alan-wake-2"
+  },
+  {
     "name": "Baba Is You",
     "copies": [
       {
@@ -2971,6 +3006,21 @@
     "image": "https://media.rawg.io/media/games/0bc/0bca854021e14ffa9005a85c4567d25c.jpg",
     "score": 86,
     "id": "baba-is-you"
+  },
+  {
+    "name": "Mad Max",
+    "copies": [
+      {
+        "platform": "ps4",
+        "type": "digital",
+        "store": "ps_store"
+      }
+    ],
+    "dlc": [],
+    "edition": [],
+    "image": null,
+    "score": 80,
+    "id": "mad-max"
   },
   {
     "name": "Death Trash",
