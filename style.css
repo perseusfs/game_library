@@ -135,11 +135,6 @@ body {
   margin-bottom: 5px;
 }
 
-.score {
-  font-size: 12px;
-  color: #38bdf8;
-}
-
 /* BADGES */
 
 .badges {
@@ -174,4 +169,25 @@ body {
   .card img {
     height: 200px;
   }
+}
+
+.card {
+  position: relative;
+}
+
+.top-icons {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 5;
+
+  display: flex;
+  gap: 6px;
+}
+
+.top-icons span {
+  background: rgba(0,0,0,0.7);
+  padding: 4px 6px;
+  border-radius: 6px;
+  font-size: 14px;
 }

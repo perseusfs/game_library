@@ -25,16 +25,7 @@ function getPlatformIcon(p) {
   return "🎯";
 }
 
-// SOURCE ICON
-function getSourceIcon(copy) {
-  if (copy.type === "physical") return "📀";
-  if (copy.store === "steam") return "🟦";
-  if (copy.store === "epic") return "🟪";
-  if (copy.store === "ps_store") return "🟥";
-  return "⬜";
-}
-
-// PLATFORM COUNT (filtered)
+// PLATFORM COUNT
 function updatePlatformCounts(games) {
   const counts = { pc: 0, ps: 0 };
 
@@ -62,15 +53,10 @@ function applyFilters() {
   games = games.filter(g => matchesPlatform(g, state.platforms));
 
   switch (state.sort) {
-    case "score_desc":
-      games.sort((a, b) => (b.score || 0) - (a.score || 0));
-      break;
-    case "score_asc":
-      games.sort((a, b) => (a.score || 0) - (b.score || 0));
-      break;
     case "name_asc":
       games.sort((a, b) => a.name.localeCompare(b.name));
       break;
+
     case "name_desc":
       games.sort((a, b) => b.name.localeCompare(a.name));
       break;
@@ -89,6 +75,24 @@ function render(games) {
     const card = document.createElement("div");
     card.className = "card";
 
+    // TOP ICONS
+    const topIcons = document.createElement("div");
+    topIcons.className = "top-icons";
+
+    if (g.favorite === true) {
+      const fav = document.createElement("span");
+      fav.innerText = "⭐";
+      topIcons.appendChild(fav);
+    }
+
+    if (g.played === true) {
+      const played = document.createElement("span");
+      played.innerText = "✔";
+      topIcons.appendChild(played);
+    }
+
+    card.appendChild(topIcons);
+
     // IMAGE
     const img = document.createElement("img");
     img.src = g.image || "https://via.placeholder.com/200x260";
@@ -98,11 +102,16 @@ function render(games) {
     overlay.className = "overlay";
 
     if (g.copies) {
-      const grouped = groupCopiesByPlatform(g.copies);
+      const lines = g.copies.map(c => {
+        let txt = c.platform;
 
-      const lines = Object.entries(grouped).map(([platform, sources]) => {
-        const uniqueSources = [...new Set(sources)];
-        return `${platform}: ${uniqueSources.join(", ")}`;
+        if (c.type === "physical") {
+          txt += " (disc)";
+        } else if (c.store) {
+          txt += " (" + c.store + ")";
+        }
+
+        return txt;
       });
 
       const p = document.createElement("span");
@@ -122,12 +131,6 @@ function render(games) {
       overlay.appendChild(e);
     }
 
-    if (g.score === null || g.score === undefined) {
-      const s = document.createElement("span");
-      s.innerText = "No score";
-      overlay.appendChild(s);
-    }
-
     if (overlay.children.length > 0) {
       card.appendChild(overlay);
     }
@@ -136,38 +139,37 @@ function render(games) {
     const info = document.createElement("div");
     info.className = "info";
 
+    // TITLE
     const title = document.createElement("div");
     title.className = "title";
     title.innerText = g.name;
 
-    const score = document.createElement("div");
-    score.className = "score";
-    score.innerText = g.score ? "★ " + g.score : "";
-
+    // BADGES
     const badges = document.createElement("div");
     badges.className = "badges";
 
-    // COPY BASED BADGES (FIXED)
     if (g.copies) {
-      const grouped = groupCopiesByPlatform(g.copies);
-
-      Object.entries(grouped).forEach(([platform, sources]) => {
+      g.copies.forEach(c => {
         const b = document.createElement("span");
         b.className = "badge";
 
-        const icon = getPlatformIcon(platform);
+        const icon = getPlatformIcon(c.platform);
 
-        // duplicate source temizle
-        const uniqueSources = [...new Set(sources)];
+        let label = c.platform;
 
-        b.innerText = `${icon} ${platform} → ${uniqueSources.join(", ")}`;
+        if (c.type === "physical") {
+          label += " (disc)";
+        } else if (c.store) {
+          label += " (" + c.store + ")";
+        }
+
+        b.innerText = `${icon} ${label}`;
 
         badges.appendChild(b);
       });
     }
 
     info.appendChild(title);
-    info.appendChild(score);
     info.appendChild(badges);
 
     card.appendChild(img);
@@ -177,26 +179,8 @@ function render(games) {
   });
 }
 
-function groupCopiesByPlatform(copies) {
-  const map = {};
-
-  copies.forEach(c => {
-    if (!map[c.platform]) {
-      map[c.platform] = [];
-    }
-
-    if (c.type === "physical") {
-      map[c.platform].push("disc");
-    } else if (c.store) {
-      map[c.platform].push(c.store);
-    }
-  });
-
-  return map;
-}
-
 // LOAD
-fetch("games_enriched.json")
+fetch("games_enriched.json?v=" + Date.now())
   .then(res => res.json())
   .then(games => {
     allGames = games;
