@@ -1,40 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Game Library</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="header">
-  <div class="controls">
+  <header class="masthead">
+    <div class="masthead-inner">
 
-    <input id="search" placeholder="Search game...">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <div class="brand-text">
+          <h1 class="wordmark">Game Library</h1>
+          <p class="brand-stat" id="collectionStat">Loading collection…</p>
+        </div>
+      </div>
 
-    <div id="platformFilters">
-      <label class="pf-item">
-        <input type="checkbox" value="pc">
-        <span>🖥 PC (<span id="count-pc">0</span>)</span>
-      </label>
+      <div class="controls">
 
-      <label class="pf-item">
-        <input type="checkbox" value="ps">
-        <span>🎮 PS (<span id="count-ps">0</span>)</span>
-      </label>
+        <div class="search-box">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input id="search" type="search" placeholder="Search games" aria-label="Search games">
+        </div>
+
+        <div class="filters" id="platformFilters">
+          <label class="pill">
+            <input type="checkbox" value="pc">
+            <span class="pill-body">
+              <span class="dot dot-pc" aria-hidden="true"></span>
+              PC
+              <span class="pill-count" id="count-pc">0</span>
+            </span>
+          </label>
+
+          <label class="pill">
+            <input type="checkbox" value="ps">
+            <span class="pill-body">
+              <span class="dot dot-ps" aria-hidden="true"></span>
+              PlayStation
+              <span class="pill-count" id="count-ps">0</span>
+            </span>
+          </label>
+        </div>
+
+        <div class="filters" id="flagFilters">
+          <label class="pill">
+            <input type="checkbox" value="favorite">
+            <span class="pill-body"><span class="glyph">★</span> Favorites</span>
+          </label>
+
+          <label class="pill">
+            <input type="checkbox" value="played">
+            <span class="pill-body"><span class="glyph">✔</span> Played</span>
+          </label>
+        </div>
+
+        <div class="select-box">
+          <select id="sort" aria-label="Sort games">
+            <option value="none">Sort: Default</option>
+            <option value="name_asc">Name A–Z</option>
+            <option value="name_desc">Name Z–A</option>
+          </select>
+        </div>
+
+      </div>
     </div>
+  </header>
 
-    <select id="sort">
-      <option value="none">Sort</option>
-      <option value="name_asc">Name A-Z</option>
-      <option value="name_desc">Name Z-A</option>
-    </select>
+  <main class="content">
+    <section class="stats" id="stats" aria-label="Collection overview"></section>
+    <p class="results-meta" id="resultsMeta"></p>
+    <div id="app" class="grid"></div>
+    <div id="empty" class="empty" hidden></div>
+  </main>
 
+  <div class="savebar" id="savebar" hidden>
+    <span class="savebar-text" id="savebarText"></span>
+    <div class="savebar-actions">
+      <button class="btn btn-ghost" id="discardBtn">Discard</button>
+      <button class="btn btn-primary" id="saveBtn">Save changes</button>
+    </div>
   </div>
-</div>
 
-<div id="app"></div>
-
-<script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
