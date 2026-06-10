@@ -40,7 +40,6 @@
               <span class="pill-count" id="count-pc">0</span>
             </span>
           </label>
-
           <label class="pill">
             <input type="checkbox" value="ps">
             <span class="pill-body">
@@ -56,7 +55,6 @@
             <input type="checkbox" value="favorite">
             <span class="pill-body"><span class="glyph">★</span> Favorites</span>
           </label>
-
           <label class="pill">
             <input type="checkbox" value="played">
             <span class="pill-body"><span class="glyph">✔</span> Played</span>
@@ -71,6 +69,9 @@
           </select>
         </div>
 
+        <button class="btn btn-soft" id="addBtn" hidden>+ Add game</button>
+        <button class="btn btn-soft" id="loginBtn" hidden>Sign in</button>
+
       </div>
     </div>
   </header>
@@ -82,6 +83,7 @@
     <div id="empty" class="empty" hidden></div>
   </main>
 
+  <!-- save bar (local mode only) -->
   <div class="savebar" id="savebar" hidden>
     <span class="savebar-text" id="savebarText"></span>
     <div class="savebar-actions">
@@ -90,6 +92,70 @@
     </div>
   </div>
 
+  <!-- login modal -->
+  <div class="modal" id="loginModal" hidden>
+    <div class="modal-card">
+      <h2 class="modal-title">Owner sign in</h2>
+      <p class="modal-sub">Only the owner can edit the library.</p>
+      <label class="field"><span>Email</span>
+        <input id="loginEmail" type="email" autocomplete="username">
+      </label>
+      <label class="field"><span>Password</span>
+        <input id="loginPass" type="password" autocomplete="current-password">
+      </label>
+      <p class="form-error" id="loginError" hidden></p>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" data-close="loginModal">Cancel</button>
+        <button class="btn btn-primary" id="loginSubmit">Sign in</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- add-game modal -->
+  <div class="modal" id="addModal" hidden>
+    <div class="modal-card">
+      <h2 class="modal-title">Add a game</h2>
+      <label class="field"><span>Name</span>
+        <input id="gName" type="text">
+      </label>
+      <label class="field"><span>Cover image URL (optional)</span>
+        <input id="gImage" type="url" placeholder="https://...">
+      </label>
+      <div class="field-row">
+        <label class="field"><span>Platform</span>
+          <select id="gPlatform">
+            <option value="pc">PC</option>
+            <option value="ps5">PS5</option>
+            <option value="ps4">PS4</option>
+            <option value="ps3">PS3</option>
+          </select>
+        </label>
+        <label class="field"><span>Type</span>
+          <select id="gType">
+            <option value="digital">Digital</option>
+            <option value="physical">Physical (disc)</option>
+          </select>
+        </label>
+        <label class="field"><span>Store</span>
+          <select id="gStore">
+            <option value="">— none —</option>
+            <option value="steam">Steam</option>
+            <option value="epic">Epic</option>
+            <option value="ps_store">PS Store</option>
+          </select>
+        </label>
+      </div>
+      <p class="form-error" id="addError" hidden></p>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" data-close="addModal">Cancel</button>
+        <button class="btn btn-primary" id="addSubmit">Add game</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Supabase client (safe to load on GitHub Pages) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

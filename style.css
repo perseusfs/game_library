@@ -475,6 +475,93 @@ body {
 .btn-primary:hover { background: #ff7355; }
 .btn-ghost { background: transparent; border-color: var(--border-2); color: var(--muted); }
 .btn-ghost:hover { color: var(--text); }
+.btn-soft {
+  background: var(--surface);
+  border-color: var(--border);
+  color: var(--text);
+}
+.btn-soft[hidden] { display: none; }
+.btn-soft:hover { background: var(--surface-2); border-color: var(--border-2); }
+
+/* ---------- MODALS ---------- */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(6, 7, 11, 0.7);
+  backdrop-filter: blur(6px);
+  animation: fade 0.18s ease both;
+}
+.modal[hidden] { display: none; }
+
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+
+.modal-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--surface);
+  border: 1px solid var(--border-2);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  animation: pop 0.2s ease both;
+}
+
+.modal-title {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  margin: 0;
+}
+.modal-sub { margin: 6px 0 18px; font-size: 13px; color: var(--muted); }
+
+.field { display: block; margin-bottom: 14px; }
+.field > span {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.field input,
+.field select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 9px;
+  border: 1px solid var(--border);
+  background: var(--bg-glow);
+  color: var(--text);
+  font: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.16s, box-shadow 0.16s;
+}
+.field input:focus,
+.field select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.field-row { display: flex; gap: 10px; }
+.field-row .field { flex: 1; }
+
+.form-error {
+  margin: 0 0 14px;
+  font-size: 13px;
+  color: #ff8a6e;
+}
+.form-error[hidden] { display: none; }
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 6px;
+}
 
 /* ---------- EMPTY STATE ---------- */
 

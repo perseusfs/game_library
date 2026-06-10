@@ -1,13 +1,33 @@
+/* ============================================================
+   CONFIG / MODE
+   ============================================================ */
+
+const CFG = window.GAME_LIBRARY_CONFIG || {};
+const SUPABASE_READY =
+  !!CFG.SUPABASE_URL && !!CFG.SUPABASE_ANON_KEY &&
+  !CFG.SUPABASE_URL.includes("YOUR_") &&
+  !CFG.SUPABASE_ANON_KEY.includes("YOUR_");
+
+const MODE = SUPABASE_READY ? "supabase" : "local";
+
+let sb = null;
+if (MODE === "supabase" && window.supabase) {
+  sb = window.supabase.createClient(CFG.SUPABASE_URL, CFG.SUPABASE_ANON_KEY);
+}
+
 let allGames = [];
+let session = null;     // supabase session (null = signed out)
+let dirty = false;      // local mode: unsaved edits waiting to download
 
-let state = {
-  search: "",
-  platforms: [],
-  flags: [],        // "favorite", "played"
-  sort: "none"
-};
+let state = { search: "", platforms: [], flags: [], sort: "none" };
 
-// ---------- LABELS ----------
+// In local mode the page is your own machine, so you are always the owner.
+// In supabase mode you are the owner only while signed in.
+function isOwner() { return MODE === "local" ? true : !!session; }
+
+/* ============================================================
+   LABELS / HELPERS
+   ============================================================ */
 
 const PLATFORM_LABEL = { pc: "PC", ps3: "PS3", ps4: "PS4", ps5: "PS5" };
 const STORE_LABEL    = { steam: "Steam", epic: "Epic", ps_store: "PS Store" };
@@ -22,8 +42,13 @@ function copyLabel(c) {
   return txt;
 }
 
-// ---------- SELF-CONTAINED PLACEHOLDER (no external service) ----------
+function slugify(name) {
+  return (name || "").toLowerCase().trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
 
+// Self-contained cover placeholder (no external service, works offline)
 function placeholderFor(name) {
   const letter = ((name || "?").trim()[0] || "?").toUpperCase();
   const svg =
@@ -40,7 +65,9 @@ function placeholderFor(name) {
   return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
 }
 
-// ---------- PLATFORM MATCH ----------
+/* ============================================================
+   FILTERING
+   ============================================================ */
 
 function matchesPlatform(game, selected) {
   if (selected.length === 0) return true;
@@ -53,26 +80,20 @@ function matchesFlags(game, flags) {
   return flags.every(f => game[f] === true);
 }
 
-// ---------- FIXED LIBRARY COUNTS (computed once) ----------
-
 function setLibraryCounts(games) {
   let pc = 0, ps = 0;
-  let platformSet = new Set();
-
+  const platformSet = new Set();
   games.forEach(g => {
     const platforms = g.copies?.map(c => c.platform) || [];
     platforms.forEach(p => platformSet.add(p));
     if (platforms.includes("pc")) pc++;
     if (platforms.some(isPlayStation)) ps++;
   });
-
   document.getElementById("count-pc").innerText = pc;
   document.getElementById("count-ps").innerText = ps;
   document.getElementById("collectionStat").innerText =
     `${games.length} games · ${platformSet.size} platforms`;
 }
-
-// ---------- FILTER + SORT ----------
 
 function applyFilters() {
   let games = [...allGames];
@@ -80,7 +101,6 @@ function applyFilters() {
   if (state.search) {
     games = games.filter(g => (g.name || "").toLowerCase().includes(state.search));
   }
-
   games = games.filter(g => matchesPlatform(g, state.platforms));
   games = games.filter(g => matchesFlags(g, state.flags));
 
@@ -90,7 +110,9 @@ function applyFilters() {
   render(games);
 }
 
-// ---------- STATS PANEL ----------
+/* ============================================================
+   STATS PANEL
+   ============================================================ */
 
 const anyCopy = (g, f) => (g.copies || []).some(f);
 const gamesWith = pred => allGames.filter(pred).length;
@@ -113,11 +135,9 @@ function renderStats() {
   tiles.forEach(t => {
     const tile = document.createElement("div");
     tile.className = "stat" + (t.cls ? " " + t.cls : "");
-
     const num = document.createElement("div");
     num.className = "stat-num";
     num.innerText = t.num;
-
     const label = document.createElement("div");
     label.className = "stat-label";
     if (t.dot) {
@@ -126,16 +146,15 @@ function renderStats() {
       label.appendChild(dot);
     }
     label.appendChild(document.createTextNode(t.label));
-
     tile.appendChild(num);
     tile.appendChild(label);
     el.appendChild(tile);
   });
 }
 
-// ---------- EDITING (favorite / played) ----------
-
-let dirty = false;
+/* ============================================================
+   EDITING — toggle favorite / played
+   ============================================================ */
 
 function makeToggle(g, key, glyph, label) {
   const btn = document.createElement("button");
@@ -150,13 +169,81 @@ function makeToggle(g, key, glyph, label) {
   return btn;
 }
 
-function toggleFlag(g, key) {
-  g[key] = g[key] !== true;
-  dirty = true;
-  updateSaveBar();
+async function toggleFlag(g, key) {
+  if (!isOwner()) return;
+
+  const prev = g[key] === true;
+  g[key] = !prev;
   renderStats();
-  applyFilters();   // keeps the view right if a flag filter is active
+  applyFilters();
+
+  if (MODE === "supabase") {
+    const { error } = await sb.from("games").update({ [key]: g[key] }).eq("id", g.id);
+    if (error) {
+      g[key] = prev;                 // roll back on failure
+      renderStats();
+      applyFilters();
+      alert("Could not save change: " + error.message);
+    }
+  } else {
+    dirty = true;
+    updateSaveBar();
+  }
 }
+
+/* ============================================================
+   ADD A GAME
+   ============================================================ */
+
+async function submitAddGame() {
+  const name  = document.getElementById("gName").value.trim();
+  const image = document.getElementById("gImage").value.trim();
+  const platform = document.getElementById("gPlatform").value;
+  const type     = document.getElementById("gType").value;
+  const store    = document.getElementById("gStore").value;
+  const errEl = document.getElementById("addError");
+
+  function fail(msg) { errEl.innerText = msg; errEl.hidden = false; }
+  errEl.hidden = true;
+
+  if (!name) return fail("Please enter a name.");
+
+  const id = slugify(name);
+  if (!id) return fail("That name has no usable letters or numbers.");
+  if (allGames.some(g => g.id === id)) return fail("A game with this name already exists.");
+
+  const copy = { platform, type };
+  if (store) copy.store = store;
+
+  const game = {
+    id, name,
+    copies: [copy],
+    dlc: [], edition: [],
+    image: image || "",
+    favorite: false, played: false
+  };
+
+  if (MODE === "supabase") {
+    const { error } = await sb.from("games").insert(game).select();
+    if (error) return fail("Could not add game: " + error.message);
+  } else {
+    dirty = true;
+    updateSaveBar();
+  }
+
+  allGames.unshift(game);
+  renderStats();
+  applyFilters();
+  closeModal("addModal");
+
+  // reset form
+  document.getElementById("gName").value = "";
+  document.getElementById("gImage").value = "";
+}
+
+/* ============================================================
+   LOCAL-MODE SAVE BAR (download updated JSON)
+   ============================================================ */
 
 function updateSaveBar() {
   const bar = document.getElementById("savebar");
@@ -180,7 +267,9 @@ function saveChanges() {
   updateSaveBar();
 }
 
-// ---------- RENDER ----------
+/* ============================================================
+   RENDER
+   ============================================================ */
 
 function render(games) {
   const app = document.getElementById("app");
@@ -188,26 +277,24 @@ function render(games) {
   const meta = document.getElementById("resultsMeta");
 
   app.innerHTML = "";
-
   meta.innerText = games.length === allGames.length
     ? `${games.length} games`
     : `${games.length} of ${allGames.length} games`;
 
   if (games.length === 0) {
     empty.hidden = false;
-    empty.innerHTML =
-      "<strong>No games match</strong>Try clearing the search or filters.";
+    empty.innerHTML = "<strong>No games match</strong>Try clearing the search or filters.";
     return;
   }
   empty.hidden = true;
 
+  const owner = isOwner();
   const frag = document.createDocumentFragment();
 
   games.forEach(g => {
     const card = document.createElement("div");
     card.className = "card";
 
-    // --- cover (positioned parent so the overlay stays on the art) ---
     const cover = document.createElement("div");
     cover.className = "cover";
 
@@ -215,23 +302,38 @@ function render(games) {
     img.loading = "lazy";
     img.alt = g.name || "Game cover";
     img.src = g.image || placeholderFor(g.name);
-    img.onerror = () => {
-      img.onerror = null;                 // guard against an infinite loop
-      img.src = placeholderFor(g.name);
-    };
+    img.onerror = () => { img.onerror = null; img.src = placeholderFor(g.name); };
     cover.appendChild(img);
 
-    // toggle actions (favorite / played)
-    const actions = document.createElement("div");
-    actions.className = "actions";
-    actions.appendChild(makeToggle(g, "favorite", "★", "favorite"));
-    actions.appendChild(makeToggle(g, "played", "✔", "played"));
-    cover.appendChild(actions);
+    // toggle actions — only the owner can edit
+    if (owner) {
+      const actions = document.createElement("div");
+      actions.className = "actions";
+      actions.appendChild(makeToggle(g, "favorite", "★", "favorite"));
+      actions.appendChild(makeToggle(g, "played", "✔", "played"));
+      cover.appendChild(actions);
+    } else {
+      // read-only: still show the status as static markers
+      if (g.favorite === true || g.played === true) {
+        const m = document.createElement("div");
+        m.className = "actions";
+        if (g.favorite === true) {
+          const s = document.createElement("span");
+          s.className = "act fav"; s.setAttribute("aria-pressed", "true"); s.innerText = "★";
+          m.appendChild(s);
+        }
+        if (g.played === true) {
+          const s = document.createElement("span");
+          s.className = "act played"; s.setAttribute("aria-pressed", "true"); s.innerText = "✔";
+          m.appendChild(s);
+        }
+        cover.appendChild(m);
+      }
+    }
 
-    // hover overlay — full copy details + dlc + editions
+    // hover overlay
     const overlay = document.createElement("div");
     overlay.className = "overlay";
-
     (g.copies || []).forEach(c => {
       const line = document.createElement("div");
       line.className = "overlay-line";
@@ -243,7 +345,6 @@ function render(games) {
       line.appendChild(text);
       overlay.appendChild(line);
     });
-
     if (g.dlc?.length || g.edition?.length) {
       const meta2 = document.createElement("div");
       meta2.className = "overlay-meta";
@@ -255,14 +356,11 @@ function render(games) {
     }
     cover.appendChild(overlay);
 
-    // --- info footer ---
     const info = document.createElement("div");
     info.className = "info";
-
     const title = document.createElement("div");
     title.className = "title";
     title.innerText = g.name;
-
     const badges = document.createElement("div");
     badges.className = "badges";
     (g.copies || []).forEach(c => {
@@ -270,13 +368,11 @@ function render(games) {
       b.className = "badge";
       const dot = document.createElement("span");
       dot.className = "dot " + (isPlayStation(c.platform) ? "dot-ps" : "dot-pc");
-      const label = document.createElement("span");
-      label.innerText = platformLabel(c.platform);
-      b.appendChild(dot);
-      b.appendChild(label);
+      const lab = document.createElement("span");
+      lab.innerText = platformLabel(c.platform);
+      b.appendChild(dot); b.appendChild(lab);
       badges.appendChild(b);
     });
-
     info.appendChild(title);
     info.appendChild(badges);
 
@@ -288,35 +384,107 @@ function render(games) {
   app.appendChild(frag);
 }
 
-// ---------- LOAD (with error handling) ----------
+/* ============================================================
+   DATA LOADING
+   ============================================================ */
 
-fetch("games_enriched.json?v=" + Date.now())
-  .then(res => {
-    if (!res.ok) throw new Error("HTTP " + res.status);
-    return res.json();
-  })
+async function loadGames() {
+  if (MODE === "supabase") {
+    const { data, error } = await sb.from("games").select("*").order("name");
+    if (error) throw error;
+    return data || [];
+  }
+  const res = await fetch("games_enriched.json?v=" + Date.now());
+  if (!res.ok) throw new Error("HTTP " + res.status);
+  return res.json();
+}
+
+function showLoadError(message) {
+  document.getElementById("collectionStat").innerText = "Could not load library";
+  const empty = document.getElementById("empty");
+  empty.hidden = false;
+  empty.innerHTML = "<strong>Couldn't load your games</strong>" + message;
+}
+
+loadGames()
   .then(games => {
     allGames = games;
-    setLibraryCounts(allGames);   // fixed totals, computed once
+    setLibraryCounts(allGames);
     renderStats();
     applyFilters();
   })
   .catch(err => {
-    document.getElementById("collectionStat").innerText = "Could not load library";
-    const empty = document.getElementById("empty");
-    empty.hidden = false;
-    empty.innerHTML =
-      "<strong>Couldn't load your games</strong>" +
-      "Check that games_enriched.json sits next to index.html. (" + err.message + ")";
+    if (MODE === "supabase") {
+      showLoadError("Check your Supabase keys in config.js and that you ran the setup SQL. (" + err.message + ")");
+    } else {
+      showLoadError("Check that games_enriched.json sits next to index.html. (" + err.message + ")");
+    }
   });
 
-// ---------- EVENTS ----------
+/* ============================================================
+   AUTH (supabase mode only)
+   ============================================================ */
+
+async function initAuth() {
+  const { data } = await sb.auth.getSession();
+  session = data.session;
+  updateAuthUI();
+
+  sb.auth.onAuthStateChange((_event, newSession) => {
+    session = newSession;
+    updateAuthUI();
+    applyFilters();   // re-render so edit buttons appear / disappear
+  });
+}
+
+function updateAuthUI() {
+  const loginBtn = document.getElementById("loginBtn");
+  const addBtn = document.getElementById("addBtn");
+
+  if (MODE === "supabase") {
+    loginBtn.hidden = false;
+    loginBtn.innerText = session ? "Sign out" : "Sign in";
+  } else {
+    loginBtn.hidden = true;   // no login needed on your own machine
+  }
+  addBtn.hidden = !isOwner();
+}
+
+async function doLogin() {
+  const email = document.getElementById("loginEmail").value.trim();
+  const password = document.getElementById("loginPass").value;
+  const errEl = document.getElementById("loginError");
+  errEl.hidden = true;
+
+  const { error } = await sb.auth.signInWithPassword({ email, password });
+  if (error) {
+    errEl.innerText = error.message;
+    errEl.hidden = false;
+    return;
+  }
+  document.getElementById("loginPass").value = "";
+  closeModal("loginModal");
+}
+
+/* ============================================================
+   MODAL HELPERS
+   ============================================================ */
+
+function openModal(id) {
+  document.getElementById(id).hidden = false;
+}
+function closeModal(id) {
+  document.getElementById(id).hidden = true;
+}
+
+/* ============================================================
+   EVENTS
+   ============================================================ */
 
 function debounce(fn, ms) {
   let t;
   return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), ms); };
 }
-
 const runSearch = debounce(() => applyFilters(), 120);
 
 document.getElementById("search").addEventListener("input", e => {
@@ -326,16 +494,14 @@ document.getElementById("search").addEventListener("input", e => {
 
 document.querySelectorAll("#platformFilters input").forEach(cb => {
   cb.addEventListener("change", () => {
-    state.platforms = [...document.querySelectorAll("#platformFilters input:checked")]
-      .map(c => c.value);
+    state.platforms = [...document.querySelectorAll("#platformFilters input:checked")].map(c => c.value);
     applyFilters();
   });
 });
 
 document.querySelectorAll("#flagFilters input").forEach(cb => {
   cb.addEventListener("change", () => {
-    state.flags = [...document.querySelectorAll("#flagFilters input:checked")]
-      .map(c => c.value);
+    state.flags = [...document.querySelectorAll("#flagFilters input:checked")].map(c => c.value);
     applyFilters();
   });
 });
@@ -345,9 +511,35 @@ document.getElementById("sort").addEventListener("change", e => {
   applyFilters();
 });
 
+// save bar (local mode)
 document.getElementById("saveBtn").addEventListener("click", saveChanges);
 document.getElementById("discardBtn").addEventListener("click", () => location.reload());
-
 window.addEventListener("beforeunload", e => {
   if (dirty) { e.preventDefault(); e.returnValue = ""; }
 });
+
+// add game
+document.getElementById("addBtn").addEventListener("click", () => openModal("addModal"));
+document.getElementById("addSubmit").addEventListener("click", submitAddGame);
+
+// login
+document.getElementById("loginBtn").addEventListener("click", () => {
+  if (session) { sb.auth.signOut(); }
+  else { openModal("loginModal"); }
+});
+document.getElementById("loginSubmit").addEventListener("click", doLogin);
+
+// generic modal close (buttons + backdrop + Esc)
+document.querySelectorAll("[data-close]").forEach(b => {
+  b.addEventListener("click", () => closeModal(b.getAttribute("data-close")));
+});
+document.querySelectorAll(".modal").forEach(m => {
+  m.addEventListener("click", e => { if (e.target === m) m.hidden = true; });
+});
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") document.querySelectorAll(".modal").forEach(m => m.hidden = true);
+});
+
+// start auth
+if (MODE === "supabase") initAuth();
+updateAuthUI();
