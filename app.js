@@ -53,6 +53,20 @@ function parseLines(value) {
   return (value || "").split("\n").map(s => s.trim()).filter(Boolean);
 }
 
+// Two copies are "the same" if platform, type, and store all match
+function sameCopy(a, b) {
+  return a.platform === b.platform &&
+         a.type === b.type &&
+         (a.store || "") === (b.store || "");
+}
+
+// Merge list b into a without duplicates (keeps order)
+function union(a, b) {
+  const out = [...(a || [])];
+  (b || []).forEach(x => { if (!out.includes(x)) out.push(x); });
+  return out;
+}
+
 // Self-contained cover placeholder (no external service, works offline)
 function placeholderFor(name) {
   const letter = ((name || "?").trim()[0] || "?").toUpperCase();
@@ -217,28 +231,57 @@ async function submitAddGame() {
 
   const id = slugify(name);
   if (!id) return fail("That name has no usable letters or numbers.");
-  if (allGames.some(g => g.id === id)) return fail("A game with this name already exists.");
 
   const copy = { platform, type };
   if (store) copy.store = store;
 
-  const game = {
-    id, name,
-    copies: [copy],
-    dlc, edition,
-    image: image || "",
-    favorite: false, played: false
-  };
+  const existing = allGames.find(g => g.id === id);
 
-  if (MODE === "supabase") {
-    const { error } = await sb.from("games").insert(game).select();
-    if (error) return fail("Could not add game: " + error.message);
+  if (existing) {
+    // Game is already in the library -> add this copy to it.
+    if (existing.copies.some(c => sameCopy(c, copy))) {
+      return fail("This game already has that exact platform and store.");
+    }
+
+    const newCopies  = [...existing.copies, copy];
+    const newDlc     = union(existing.dlc, dlc);
+    const newEdition = union(existing.edition, edition);
+
+    if (MODE === "supabase") {
+      const { error } = await sb.from("games")
+        .update({ copies: newCopies, dlc: newDlc, edition: newEdition })
+        .eq("id", id);
+      if (error) return fail("Could not update game: " + error.message);
+    } else {
+      dirty = true;
+      updateSaveBar();
+    }
+
+    existing.copies  = newCopies;
+    existing.dlc     = newDlc;
+    existing.edition = newEdition;
+
   } else {
-    dirty = true;
-    updateSaveBar();
+    // Brand-new game.
+    const game = {
+      id, name,
+      copies: [copy],
+      dlc, edition,
+      image: image || "",
+      favorite: false, played: false
+    };
+
+    if (MODE === "supabase") {
+      const { error } = await sb.from("games").insert(game).select();
+      if (error) return fail("Could not add game: " + error.message);
+    } else {
+      dirty = true;
+      updateSaveBar();
+    }
+
+    allGames.unshift(game);
   }
 
-  allGames.unshift(game);
   renderStats();
   applyFilters();
   closeModal("addModal");
