@@ -48,6 +48,11 @@ function slugify(name) {
     .replace(/^-+|-+$/g, "");
 }
 
+// Split a textarea into a clean list (one item per line, blanks removed)
+function parseLines(value) {
+  return (value || "").split("\n").map(s => s.trim()).filter(Boolean);
+}
+
 // Self-contained cover placeholder (no external service, works offline)
 function placeholderFor(name) {
   const letter = ((name || "?").trim()[0] || "?").toUpperCase();
@@ -201,6 +206,8 @@ async function submitAddGame() {
   const platform = document.getElementById("gPlatform").value;
   const type     = document.getElementById("gType").value;
   const store    = document.getElementById("gStore").value;
+  const dlc      = parseLines(document.getElementById("gDlc").value);
+  const edition  = parseLines(document.getElementById("gEdition").value);
   const errEl = document.getElementById("addError");
 
   function fail(msg) { errEl.innerText = msg; errEl.hidden = false; }
@@ -218,7 +225,7 @@ async function submitAddGame() {
   const game = {
     id, name,
     copies: [copy],
-    dlc: [], edition: [],
+    dlc, edition,
     image: image || "",
     favorite: false, played: false
   };
@@ -239,6 +246,8 @@ async function submitAddGame() {
   // reset form
   document.getElementById("gName").value = "";
   document.getElementById("gImage").value = "";
+  document.getElementById("gDlc").value = "";
+  document.getElementById("gEdition").value = "";
 }
 
 /* ============================================================
