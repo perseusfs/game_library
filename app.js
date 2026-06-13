@@ -1107,6 +1107,25 @@ function gamesStatsHTML() {
   const byStore = tally(copies.map(c =>
     c.type === "physical" ? "Disk" : (STORE_LABEL[c.store] || c.store || "—")));
 
+  // enriched data
+  const byGenre = tally(G.flatMap(g => g.genres || []));
+  const distinctGenres = byGenre.length;
+  const withSummary = G.filter(g => (g.description || "").trim()).length;
+
+  const decMap = new Map();
+  G.forEach(g => {
+    const y = parseInt(String(g.released || "").slice(0, 4), 10);
+    if (!y) return;
+    const start = Math.floor(y / 10) * 10;
+    decMap.set(start, (decMap.get(start) || 0) + 1);
+  });
+  const byDecade = [...decMap.entries()].sort((a, b) => a[0] - b[0]).map(([s, c]) => [`${s}'ler`, c]);
+
+  const dated = G.map(g => ({ g, y: parseInt(String(g.released || "").slice(0, 4), 10) }))
+                 .filter(o => o.y);
+  const oldest = dated.length ? dated.reduce((a, b) => (b.y < a.y ? b : a)) : null;
+  const newest = dated.length ? dated.reduce((a, b) => (b.y > a.y ? b : a)) : null;
+
   const tiles = [
     { num: total, label: "oyun" },
     { num: copies.length, label: "kopya" },
@@ -1116,13 +1135,17 @@ function gamesStatsHTML() {
     { num: digital, label: "dijital" },
     { num: multi, label: "çok platform" },
     { num: withDlc, label: "DLC'li" },
-    { num: withEd, label: "sürümlü" }
+    { num: withEd, label: "sürümlü" },
+    { num: distinctGenres, label: "tür" },
+    { num: withSummary, label: "özetli" }
   ];
 
   const mostCopies = [...G].sort((a, b) => (b.copies || []).length - (a.copies || []).length)[0];
   const mostDlc = [...G].sort((a, b) => (b.dlc || []).length - (a.dlc || []).length)[0];
 
   let highlights = '<section class="panel highlights"><h2>Öne çıkanlar</h2>';
+  if (oldest) highlights += `<p><span class="hl-label">En eski</span> <strong>${esc(oldest.g.name)}</strong> — ${oldest.y}</p>`;
+  if (newest) highlights += `<p><span class="hl-label">En yeni</span> <strong>${esc(newest.g.name)}</strong> — ${newest.y}</p>`;
   if (mostCopies) highlights += `<p><span class="hl-label">En çok kopya</span> <strong>${esc(mostCopies.name)}</strong> — ${(mostCopies.copies || []).length}</p>`;
   if (mostDlc && (mostDlc.dlc || []).length) highlights += `<p><span class="hl-label">En çok DLC</span> <strong>${esc(mostDlc.name)}</strong> — ${mostDlc.dlc.length}</p>`;
   highlights += "</section>";
@@ -1132,7 +1155,9 @@ function gamesStatsHTML() {
     tilesHTML(tiles) +
     '<div class="panels">' +
       panelHTML("Platforma göre", byPlatform, "coral") +
+      panelHTML("Türlere göre", byGenre, "warm", { limit: 10 }) +
       panelHTML("Mağaza / formata göre", byStore, "blue") +
+      panelHTML("Çıkış dönemi", byDecade, "teal") +
       highlights +
     "</div></section>";
 }
