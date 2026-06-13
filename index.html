@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Library</title>
+  <title>Kütüphane</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,24 +20,24 @@
         <div class="brand">
           <span class="brand-mark" aria-hidden="true"></span>
           <div class="brand-text">
-            <h1 class="wordmark" id="wordmark">Game Library</h1>
-            <p class="brand-stat" id="collectionStat">Loading…</p>
+            <h1 class="wordmark" id="wordmark">Oyun Kütüphanesi</h1>
+            <p class="brand-stat" id="collectionStat">Yükleniyor…</p>
           </div>
         </div>
 
         <div class="modeswitch" id="modeSwitch" role="tablist" aria-label="Library">
-          <button class="ms-btn active" data-lib="games" role="tab">🎮 Games</button>
-          <button class="ms-btn" data-lib="books" role="tab">📚 Books</button>
+          <button class="ms-btn active" data-lib="games" role="tab">🎮 Oyunlar</button>
+          <button class="ms-btn" data-lib="books" role="tab">📚 Kitaplar</button>
           <button class="ms-btn" data-lib="stats" role="tab">📊 İstatistik</button>
         </div>
 
         <div class="topbar-right">
           <div class="search-box">
             <span class="search-icon" aria-hidden="true">⌕</span>
-            <input id="search" type="search" placeholder="Search games" aria-label="Search">
+            <input id="search" type="search" placeholder="Oyun ara…" aria-label="Search">
           </div>
-          <button class="btn btn-soft" id="addBtn" hidden>+ Add</button>
-          <button class="btn btn-soft" id="loginBtn" hidden>Sign in</button>
+          <button class="btn btn-soft" id="addBtn" hidden>+ Ekle</button>
+          <button class="btn btn-soft" id="loginBtn" hidden>Giriş yap</button>
         </div>
       </div>
 
@@ -56,14 +56,14 @@
             </label>
           </div>
           <div class="filters" id="flagFilters">
-            <label class="pill"><input type="checkbox" value="favorite"><span class="pill-body"><span class="glyph">★</span> Favorites</span></label>
-            <label class="pill"><input type="checkbox" value="played"><span class="pill-body"><span class="glyph">✔</span> Played</span></label>
+            <label class="pill"><input type="checkbox" value="favorite"><span class="pill-body"><span class="glyph">★</span> Favoriler</span></label>
+            <label class="pill"><input type="checkbox" value="played"><span class="pill-body"><span class="glyph">✔</span> Oynananlar</span></label>
           </div>
           <div class="select-box">
             <select id="sort" aria-label="Sort games">
-              <option value="none">Sort: Default</option>
-              <option value="name_asc">Name A–Z</option>
-              <option value="name_desc">Name Z–A</option>
+              <option value="none">Sırala: Varsayılan</option>
+              <option value="name_asc">İsim A–Z</option>
+              <option value="name_desc">İsim Z–A</option>
             </select>
           </div>
         </div>
@@ -125,22 +125,22 @@
   <div class="savebar" id="savebar" hidden>
     <span class="savebar-text" id="savebarText"></span>
     <div class="savebar-actions">
-      <button class="btn btn-ghost" id="discardBtn">Discard</button>
-      <button class="btn btn-primary" id="saveBtn">Save changes</button>
+      <button class="btn btn-ghost" id="discardBtn">Geri al</button>
+      <button class="btn btn-primary" id="saveBtn">Kaydet</button>
     </div>
   </div>
 
   <!-- login modal -->
   <div class="modal" id="loginModal" hidden>
     <div class="modal-card">
-      <h2 class="modal-title">Owner sign in</h2>
-      <p class="modal-sub">Only the owner can edit the library.</p>
-      <label class="field"><span>Email</span><input id="loginEmail" type="email" autocomplete="username"></label>
-      <label class="field"><span>Password</span><input id="loginPass" type="password" autocomplete="current-password"></label>
+      <h2 class="modal-title">Sahip girişi</h2>
+      <p class="modal-sub">Kütüphaneyi yalnızca sahibi düzenleyebilir.</p>
+      <label class="field"><span>E-posta</span><input id="loginEmail" type="email" autocomplete="username"></label>
+      <label class="field"><span>Şifre</span><input id="loginPass" type="password" autocomplete="current-password"></label>
       <p class="form-error" id="loginError" hidden></p>
       <div class="modal-actions">
-        <button class="btn btn-ghost" data-close="loginModal">Cancel</button>
-        <button class="btn btn-primary" id="loginSubmit">Sign in</button>
+        <button class="btn btn-ghost" data-close="loginModal">Vazgeç</button>
+        <button class="btn btn-primary" id="loginSubmit">Giriş yap</button>
       </div>
     </div>
   </div>
@@ -148,27 +148,27 @@
   <!-- game add modal -->
   <div class="modal" id="addModal" hidden>
     <div class="modal-card">
-      <h2 class="modal-title">Add a game</h2>
-      <p class="modal-sub">If the game already exists, this adds the platform and store as another copy.</p>
-      <label class="field"><span>Name</span><input id="gName" type="text"></label>
-      <label class="field"><span>Cover image URL (optional)</span><input id="gImage" type="url" placeholder="https://..."></label>
+      <h2 class="modal-title">Oyun ekle</h2>
+      <p class="modal-sub">Oyun zaten varsa, platform ve mağazayı yeni bir kopya olarak ekler.</p>
+      <label class="field"><span>Ad</span><input id="gName" type="text"></label>
+      <label class="field"><span>Kapak görseli URL (isteğe bağlı)</span><input id="gImage" type="url" placeholder="https://..."></label>
       <div class="field-row">
         <label class="field"><span>Platform</span>
           <select id="gPlatform"><option value="pc">PC</option><option value="ps5">PS5</option><option value="ps4">PS4</option><option value="ps3">PS3</option></select>
         </label>
-        <label class="field"><span>Type</span>
-          <select id="gType"><option value="digital">Digital</option><option value="physical">Physical (disc)</option></select>
+        <label class="field"><span>Biçim</span>
+          <select id="gType"><option value="digital">Dijital</option><option value="physical">Fiziksel (disk)</option></select>
         </label>
-        <label class="field"><span>Store</span>
-          <select id="gStore"><option value="">— none —</option><option value="steam">Steam</option><option value="epic">Epic</option><option value="ps_store">PS Store</option></select>
+        <label class="field"><span>Mağaza</span>
+          <select id="gStore"><option value="">— yok —</option><option value="steam">Steam</option><option value="epic">Epic</option><option value="ps_store">PS Store</option></select>
         </label>
       </div>
-      <label class="field"><span>DLC — one per line (optional)</span><textarea id="gDlc" rows="2"></textarea></label>
-      <label class="field"><span>Editions — one per line (optional)</span><textarea id="gEdition" rows="2"></textarea></label>
+      <label class="field"><span>DLC — her satıra bir (isteğe bağlı)</span><textarea id="gDlc" rows="2"></textarea></label>
+      <label class="field"><span>Sürümler — her satıra bir (isteğe bağlı)</span><textarea id="gEdition" rows="2"></textarea></label>
       <p class="form-error" id="addError" hidden></p>
       <div class="modal-actions">
-        <button class="btn btn-ghost" data-close="addModal">Cancel</button>
-        <button class="btn btn-primary" id="addSubmit">Add game</button>
+        <button class="btn btn-ghost" data-close="addModal">Vazgeç</button>
+        <button class="btn btn-primary" id="addSubmit">Oyun ekle</button>
       </div>
     </div>
   </div>

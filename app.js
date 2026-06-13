@@ -45,7 +45,7 @@ function isPlayStation(p) { return p.startsWith("ps"); }
 
 function copyLabel(c) {
   let txt = platformLabel(c.platform);
-  if (c.type === "physical") txt += " · Disc";
+  if (c.type === "physical") txt += " · Disk";
   else if (c.store) txt += " · " + (STORE_LABEL[c.store] || c.store);
   return txt;
 }
@@ -81,12 +81,12 @@ function placeholderFor(name) {
   const svg =
     "<svg xmlns='http://www.w3.org/2000/svg' width='400' height='600'>" +
       "<defs><linearGradient id='g' x1='0' y1='0' x2='0' y2='1'>" +
-        "<stop offset='0' stop-color='#1f2233'/>" +
-        "<stop offset='1' stop-color='#14151f'/>" +
+        "<stop offset='0' stop-color='#323746'/>" +
+        "<stop offset='1' stop-color='#262a36'/>" +
       "</linearGradient></defs>" +
       "<rect width='400' height='600' fill='url(#g)'/>" +
       "<text x='50%' y='50%' font-family='Inter,sans-serif' font-size='180' " +
-        "font-weight='700' fill='#343a52' text-anchor='middle' " +
+        "font-weight='700' fill='#4b5168' text-anchor='middle' " +
         "dominant-baseline='central'>" + letter + "</text>" +
     "</svg>";
   return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
@@ -119,7 +119,7 @@ function setLibraryCounts(games) {
   document.getElementById("count-pc").innerText = pc;
   document.getElementById("count-ps").innerText = ps;
   document.getElementById("collectionStat").innerText =
-    `${games.length} games · ${platformSet.size} platforms`;
+    `${games.length} oyun · ${platformSet.size} platform`;
 }
 
 function applyFilters() {
@@ -146,15 +146,15 @@ const gamesWith = pred => allGames.filter(pred).length;
 
 function renderStats() {
   const tiles = [
-    { num: allGames.length, label: "Total" },
+    { num: allGames.length, label: "Toplam" },
     { num: gamesWith(g => anyCopy(g, c => c.platform === "pc")), label: "PC", dot: "dot-pc" },
     { num: gamesWith(g => anyCopy(g, c => isPlayStation(c.platform))), label: "PlayStation", dot: "dot-ps" },
-    { num: gamesWith(g => anyCopy(g, c => c.type === "physical")), label: "On disc" },
+    { num: gamesWith(g => anyCopy(g, c => c.type === "physical")), label: "Disk" },
     { num: gamesWith(g => anyCopy(g, c => c.store === "steam")), label: "Steam" },
     { num: gamesWith(g => anyCopy(g, c => c.store === "epic")), label: "Epic" },
     { num: gamesWith(g => anyCopy(g, c => c.store === "ps_store")), label: "PS Store" },
-    { num: gamesWith(g => g.favorite === true), label: "Favorites", cls: "gold" },
-    { num: gamesWith(g => g.played === true), label: "Played", cls: "accent" }
+    { num: gamesWith(g => g.favorite === true), label: "Favori", cls: "gold" },
+    { num: gamesWith(g => g.played === true), label: "Oynandı", cls: "accent" }
   ];
 
   const el = document.getElementById("stats");
@@ -190,7 +190,7 @@ function makeToggle(g, key, glyph, label) {
   btn.innerText = glyph;
   const on = g[key] === true;
   btn.setAttribute("aria-pressed", on ? "true" : "false");
-  btn.setAttribute("aria-label", (on ? "Remove " : "Mark as ") + label);
+  btn.setAttribute("aria-label", (on ? "Kaldır: " : "Ekle: ") + label);
   btn.title = label[0].toUpperCase() + label.slice(1);
   btn.addEventListener("click", () => toggleFlag(g, key));
   return btn;
@@ -235,10 +235,10 @@ async function submitAddGame() {
   function fail(msg) { errEl.innerText = msg; errEl.hidden = false; }
   errEl.hidden = true;
 
-  if (!name) return fail("Please enter a name.");
+  if (!name) return fail("Lütfen bir ad girin.");
 
   const id = slugify(name);
-  if (!id) return fail("That name has no usable letters or numbers.");
+  if (!id) return fail("Bu adda kullanılabilir harf veya rakam yok.");
 
   const copy = { platform, type };
   if (store) copy.store = store;
@@ -248,7 +248,7 @@ async function submitAddGame() {
   if (existing) {
     // Game is already in the library -> add this copy to it.
     if (existing.copies.some(c => sameCopy(c, copy))) {
-      return fail("This game already has that exact platform and store.");
+      return fail("Bu oyunda tam olarak bu platform ve mağaza zaten var.");
     }
 
     const newCopies  = [...existing.copies, copy];
@@ -259,7 +259,7 @@ async function submitAddGame() {
       const { error } = await sb.from("games")
         .update({ copies: newCopies, dlc: newDlc, edition: newEdition })
         .eq("id", id);
-      if (error) return fail("Could not update game: " + error.message);
+      if (error) return fail("Oyun güncellenemedi: " + error.message);
     } else {
       dirty = true;
       updateSaveBar();
@@ -281,7 +281,7 @@ async function submitAddGame() {
 
     if (MODE === "supabase") {
       const { error } = await sb.from("games").insert(game).select();
-      if (error) return fail("Could not add game: " + error.message);
+      if (error) return fail("Oyun eklenemedi: " + error.message);
     } else {
       dirty = true;
       updateSaveBar();
@@ -309,7 +309,7 @@ function updateSaveBar() {
   const bar = document.getElementById("savebar");
   bar.hidden = !(dirty || dirtyBooks);
   if (dirty || dirtyBooks) {
-    document.getElementById("savebarText").innerText = "You have unsaved changes";
+    document.getElementById("savebarText").innerText = "Kaydedilmemiş değişiklikler";
   }
 }
 
@@ -342,12 +342,12 @@ function render(games) {
 
   app.innerHTML = "";
   meta.innerText = games.length === allGames.length
-    ? `${games.length} games`
-    : `${games.length} of ${allGames.length} games`;
+    ? `${games.length} oyun`
+    : `${games.length} / ${allGames.length} oyun`;
 
   if (games.length === 0) {
     empty.hidden = false;
-    empty.innerHTML = "<strong>No games match</strong>Try clearing the search or filters.";
+    empty.innerHTML = "<strong>Eşleşen oyun yok</strong>Aramayı veya filtreleri temizle.";
     return;
   }
   empty.hidden = true;
@@ -373,8 +373,8 @@ function render(games) {
     if (owner) {
       const actions = document.createElement("div");
       actions.className = "actions";
-      actions.appendChild(makeToggle(g, "favorite", "★", "favorite"));
-      actions.appendChild(makeToggle(g, "played", "✔", "played"));
+      actions.appendChild(makeToggle(g, "favorite", "★", "favori"));
+      actions.appendChild(makeToggle(g, "played", "✔", "oynandı"));
       cover.appendChild(actions);
     } else {
       // read-only: still show the status as static markers
@@ -464,10 +464,10 @@ async function loadGames() {
 }
 
 function showLoadError(message) {
-  document.getElementById("collectionStat").innerText = "Could not load library";
+  document.getElementById("collectionStat").innerText = "Kütüphane yüklenemedi";
   const empty = document.getElementById("empty");
   empty.hidden = false;
-  empty.innerHTML = "<strong>Couldn't load your games</strong>" + message;
+  empty.innerHTML = "<strong>Oyunlar yüklenemedi</strong>" + message;
 }
 
 loadGames()
@@ -480,9 +480,9 @@ loadGames()
   })
   .catch(err => {
     if (MODE === "supabase") {
-      showLoadError("Check your Supabase keys in config.js and that you ran the setup SQL. (" + err.message + ")");
+      showLoadError("config.js içindeki Supabase anahtarlarını ve kurulum SQL'ini çalıştırdığını kontrol et. (" + err.message + ")");
     } else {
-      showLoadError("Check that games_enriched.json sits next to index.html. (" + err.message + ")");
+      showLoadError("games_enriched.json dosyasının index.html ile aynı klasörde olduğunu kontrol et. (" + err.message + ")");
     }
   });
 
@@ -508,12 +508,12 @@ function updateAuthUI() {
 
   if (MODE === "supabase") {
     loginBtn.hidden = false;
-    loginBtn.innerText = session ? "Sign out" : "Sign in";
+    loginBtn.innerText = session ? "Çıkış yap" : "Giriş yap";
   } else {
     loginBtn.hidden = true;   // no login needed on your own machine
   }
   addBtn.hidden = !isOwner() || library === "stats";
-  addBtn.innerText = library === "games" ? "+ Add game" : "+ Kitap ekle";
+  addBtn.innerText = library === "games" ? "+ Oyun ekle" : "+ Kitap ekle";
 }
 
 async function doLogin() {
@@ -981,13 +981,13 @@ function switchLibrary(lib) {
     btn.classList.toggle("active", btn.dataset.lib === lib));
 
   document.getElementById("wordmark").innerText =
-    lib === "games" ? "Game Library" : lib === "books" ? "Kitaplık" : "İstatistik";
+    lib === "games" ? "Oyun Kütüphanesi" : lib === "books" ? "Kitaplık" : "İstatistik";
 
   // search box only applies to games/books
   const search = document.getElementById("search");
   document.querySelector(".search-box").style.display = lib === "stats" ? "none" : "";
   if (lib === "games") {
-    search.placeholder = "Search games";
+    search.placeholder = "Oyun ara…";
     search.value = state.search;
   } else if (lib === "books") {
     search.placeholder = "Kitap, yazar veya yayınevi ara…";
@@ -1064,34 +1064,34 @@ function gamesStatsHTML() {
 
   const byPlatform = tally(copies.map(c => platformLabel(c.platform)));
   const byStore = tally(copies.map(c =>
-    c.type === "physical" ? "Disc" : (STORE_LABEL[c.store] || c.store || "—")));
+    c.type === "physical" ? "Disk" : (STORE_LABEL[c.store] || c.store || "—")));
 
   const tiles = [
-    { num: total, label: "games" },
-    { num: copies.length, label: "copies" },
-    { num: `${fav}`, label: "favorites" },
-    { num: `${played} <small>%${playedPct}</small>`, label: "played" },
-    { num: physical, label: "on disc" },
-    { num: digital, label: "digital" },
-    { num: multi, label: "multi-platform" },
-    { num: withDlc, label: "with DLC" },
-    { num: withEd, label: "with editions" }
+    { num: total, label: "oyun" },
+    { num: copies.length, label: "kopya" },
+    { num: `${fav}`, label: "favori" },
+    { num: `${played} <small>%${playedPct}</small>`, label: "oynandı" },
+    { num: physical, label: "disk" },
+    { num: digital, label: "dijital" },
+    { num: multi, label: "çok platform" },
+    { num: withDlc, label: "DLC'li" },
+    { num: withEd, label: "sürümlü" }
   ];
 
   const mostCopies = [...G].sort((a, b) => (b.copies || []).length - (a.copies || []).length)[0];
   const mostDlc = [...G].sort((a, b) => (b.dlc || []).length - (a.dlc || []).length)[0];
 
-  let highlights = '<section class="panel highlights"><h2>Highlights</h2>';
-  if (mostCopies) highlights += `<p><span class="hl-label">Most copies</span> <strong>${esc(mostCopies.name)}</strong> — ${(mostCopies.copies || []).length}</p>`;
-  if (mostDlc && (mostDlc.dlc || []).length) highlights += `<p><span class="hl-label">Most DLC</span> <strong>${esc(mostDlc.name)}</strong> — ${mostDlc.dlc.length}</p>`;
+  let highlights = '<section class="panel highlights"><h2>Öne çıkanlar</h2>';
+  if (mostCopies) highlights += `<p><span class="hl-label">En çok kopya</span> <strong>${esc(mostCopies.name)}</strong> — ${(mostCopies.copies || []).length}</p>`;
+  if (mostDlc && (mostDlc.dlc || []).length) highlights += `<p><span class="hl-label">En çok DLC</span> <strong>${esc(mostDlc.name)}</strong> — ${mostDlc.dlc.length}</p>`;
   highlights += "</section>";
 
   return '<section class="stats-section">' +
-    `<h2 class="section-title">🎮 Games <span class="pill-count">${total}</span></h2>` +
+    `<h2 class="section-title">🎮 Oyunlar <span class="pill-count">${total}</span></h2>` +
     tilesHTML(tiles) +
     '<div class="panels">' +
-      panelHTML("By platform", byPlatform, "coral") +
-      panelHTML("By store / format", byStore, "blue") +
+      panelHTML("Platforma göre", byPlatform, "coral") +
+      panelHTML("Mağaza / formata göre", byStore, "blue") +
       highlights +
     "</div></section>";
 }

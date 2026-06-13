@@ -1,26 +1,26 @@
 :root {
-  /* surfaces */
-  --bg:        #0c0d13;
-  --bg-glow:   #16131f;
-  --surface:   #161825;
-  --surface-2: #1f2233;
-  --border:    rgba(255, 255, 255, 0.08);
-  --border-2:  rgba(255, 255, 255, 0.14);
+  /* surfaces — lighter graphite, more depth between layers */
+  --bg:        #1c1f29;
+  --bg-glow:   #262a39;
+  --surface:   #262a36;
+  --surface-2: #323746;
+  --border:    rgba(255, 255, 255, 0.10);
+  --border-2:  rgba(255, 255, 255, 0.20);
 
   /* text */
-  --text:  #ECEDF2;
-  --muted: #8C8FA3;
-  --faint: #5b5f72;
+  --text:  #F2F3F7;
+  --muted: #A7ACBE;
+  --faint: #767c90;
 
   /* accents */
-  --accent:      #FF5C39;   /* coral — active / focus */
-  --accent-soft: rgba(255, 92, 57, 0.16);
+  --accent:      #FF6646;   /* coral — active / focus */
+  --accent-soft: rgba(255, 102, 70, 0.20);
   --gold:        #F5C451;   /* favorites only */
-  --pc:          #7C9CFF;   /* PC dot */
-  --ps:          #45C9FF;   /* PlayStation dot */
+  --pc:          #8AA6FF;   /* PC dot */
+  --ps:          #55D0FF;   /* PlayStation dot */
 
   --radius: 14px;
-  --shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.8);
+  --shadow: 0 16px 38px -20px rgba(0, 0, 0, 0.65);
 }
 
 * { box-sizing: border-box; }
@@ -532,7 +532,12 @@ body {
   border-radius: 16px;
   padding: 24px;
   box-shadow: var(--shadow);
-  animation: pop 0.2s ease both;
+  animation: modalpop 0.2s ease both;
+}
+
+@keyframes modalpop {
+  from { opacity: 0; transform: translateY(10px) scale(0.985); }
+  to   { opacity: 1; transform: none; }
 }
 
 .modal-title {
