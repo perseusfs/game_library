@@ -16,25 +16,31 @@
   <header class="masthead">
     <div class="masthead-inner">
 
-      <div class="brand">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <div class="brand-text">
-          <h1 class="wordmark" id="wordmark">Game Library</h1>
-          <p class="brand-stat" id="collectionStat">Loading…</p>
+      <div class="topbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <div class="brand-text">
+            <h1 class="wordmark" id="wordmark">Game Library</h1>
+            <p class="brand-stat" id="collectionStat">Loading…</p>
+          </div>
+        </div>
+
+        <div class="modeswitch" id="modeSwitch" role="tablist" aria-label="Library">
+          <button class="ms-btn active" data-lib="games" role="tab">🎮 Games</button>
+          <button class="ms-btn" data-lib="books" role="tab">📚 Books</button>
+        </div>
+
+        <div class="topbar-right">
+          <div class="search-box">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="search" type="search" placeholder="Search games" aria-label="Search">
+          </div>
+          <button class="btn btn-soft" id="addBtn" hidden>+ Add</button>
+          <button class="btn btn-soft" id="loginBtn" hidden>Sign in</button>
         </div>
       </div>
 
-      <div class="modeswitch" id="modeSwitch" role="tablist" aria-label="Library">
-        <button class="ms-btn active" data-lib="games" role="tab">🎮 Games</button>
-        <button class="ms-btn" data-lib="books" role="tab">📚 Books</button>
-      </div>
-
-      <div class="controls">
-
-        <div class="search-box">
-          <span class="search-icon" aria-hidden="true">⌕</span>
-          <input id="search" type="search" placeholder="Search games" aria-label="Search">
-        </div>
+      <div class="filterbar">
 
         <!-- GAMES controls -->
         <div class="lib-controls" id="games-controls">
@@ -84,9 +90,6 @@
             </select>
           </div>
         </div>
-
-        <button class="btn btn-soft" id="addBtn" hidden>+ Add</button>
-        <button class="btn btn-soft" id="loginBtn" hidden>Sign in</button>
 
       </div>
     </div>
