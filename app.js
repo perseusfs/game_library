@@ -22,8 +22,9 @@ let dirty = false;      // local mode: unsaved game edits waiting to download
 let state = { search: "", platforms: [], flags: [], sort: "none" };
 
 // ---- books + library switch ----
-let library = "games";  // "games" | "books"
+let library = "games";  // "games" | "books" | "stats"
 let allBooks = [];
+let gamesLoaded = false;
 let booksLoaded = false;
 let dirtyBooks = false;
 let bookState = { search: "", genre: "", language: "", shelf: "", status: "", sort: "title" };
@@ -472,6 +473,7 @@ function showLoadError(message) {
 loadGames()
   .then(games => {
     allGames = games;
+    gamesLoaded = true;
     setLibraryCounts(allGames);
     renderStats();
     applyFilters();
@@ -510,7 +512,7 @@ function updateAuthUI() {
   } else {
     loginBtn.hidden = true;   // no login needed on your own machine
   }
-  addBtn.hidden = !isOwner();
+  addBtn.hidden = !isOwner() || library === "stats";
   addBtn.innerText = library === "games" ? "+ Add game" : "+ Kitap ekle";
 }
 
@@ -624,8 +626,9 @@ document.querySelectorAll("#modeSwitch .ms-btn").forEach(btn => {
   btn.addEventListener("click", () => switchLibrary(btn.dataset.lib));
 });
 
-// start in the library named by the URL hash (#books), else games
-switchLibrary(location.hash.replace("#", "") === "books" ? "books" : "games");
+// start in the library named by the URL hash, else games
+const startLib = location.hash.replace("#", "");
+switchLibrary(["games", "books", "stats"].includes(startLib) ? startLib : "games");
 updateAuthUI();
 
 /* ============================================================
@@ -972,17 +975,21 @@ function switchLibrary(lib) {
   document.getElementById("books-controls").hidden = lib !== "books";
   document.getElementById("games-view").hidden = lib !== "games";
   document.getElementById("books-view").hidden = lib !== "books";
+  document.getElementById("stats-view").hidden = lib !== "stats";
 
   document.querySelectorAll("#modeSwitch .ms-btn").forEach(btn =>
     btn.classList.toggle("active", btn.dataset.lib === lib));
 
-  document.getElementById("wordmark").innerText = lib === "games" ? "Game Library" : "Kitaplık";
+  document.getElementById("wordmark").innerText =
+    lib === "games" ? "Game Library" : lib === "books" ? "Kitaplık" : "İstatistik";
 
+  // search box only applies to games/books
   const search = document.getElementById("search");
+  document.querySelector(".search-box").style.display = lib === "stats" ? "none" : "";
   if (lib === "games") {
     search.placeholder = "Search games";
     search.value = state.search;
-  } else {
+  } else if (lib === "books") {
     search.placeholder = "Kitap, yazar veya yayınevi ara…";
     search.value = bookState.search;
   }
@@ -991,7 +998,188 @@ function switchLibrary(lib) {
 
   if (lib === "games") {
     if (allGames.length) { setLibraryCounts(allGames); renderStats(); applyFilters(); }
-  } else {
+  } else if (lib === "books") {
     ensureBooks();
+  } else {
+    ensureStats();
+  }
+}
+
+/* ============================================================
+   STATS DASHBOARD (third mode)
+   ============================================================ */
+
+function esc(s) {
+  return String(s == null ? "" : s).replace(/[&<>"]/g,
+    c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+}
+
+// Count occurrences -> [[name, count], ...] sorted by count desc
+function tally(items) {
+  const m = new Map();
+  items.forEach(x => {
+    if (x == null || x === "") return;
+    m.set(x, (m.get(x) || 0) + 1);
+  });
+  return [...m.entries()].sort((a, b) => b[1] - a[1]);
+}
+
+function tilesHTML(tiles) {
+  return '<section class="big-grid">' + tiles.map(t =>
+    `<div class="big-stat"><span class="big-num">${t.num}</span>` +
+    `<span class="big-label">${esc(t.label)}</span></div>`).join("") + "</section>";
+}
+
+function panelHTML(title, entries, cls, opts) {
+  opts = opts || {};
+  if (!entries.length) return "";
+  const limit = opts.limit || entries.length;
+  const shown = entries.slice(0, limit);
+  const max = Math.max(...shown.map(e => e[1]), 1);
+  const rows = shown.map(([name, count]) => {
+    const w = Math.max(2, Math.round(100 * count / max));
+    const label = opts.chip
+      ? `<span class="shelf-chip">${esc(name)}</span>`
+      : esc(name);
+    return `<div class="bar-row"><span class="bar-name">${label}</span>` +
+           `<span class="bar-track"><span class="bar-fill ${cls}" style="width:${w}%"></span></span>` +
+           `<span class="bar-val">${count}</span></div>`;
+  }).join("");
+  return `<section class="panel"><h2>${esc(title)}</h2>${rows}</section>`;
+}
+
+function gamesStatsHTML() {
+  const G = allGames;
+  if (!G.length) return "";
+  const copies = G.flatMap(g => g.copies || []);
+  const total = G.length;
+  const fav = G.filter(g => g.favorite).length;
+  const played = G.filter(g => g.played).length;
+  const physical = copies.filter(c => c.type === "physical").length;
+  const digital = copies.length - physical;
+  const multi = G.filter(g => new Set((g.copies || []).map(c => c.platform)).size > 1).length;
+  const withDlc = G.filter(g => (g.dlc || []).length).length;
+  const withEd = G.filter(g => (g.edition || []).length).length;
+  const playedPct = total ? Math.round(100 * played / total) : 0;
+
+  const byPlatform = tally(copies.map(c => platformLabel(c.platform)));
+  const byStore = tally(copies.map(c =>
+    c.type === "physical" ? "Disc" : (STORE_LABEL[c.store] || c.store || "—")));
+
+  const tiles = [
+    { num: total, label: "games" },
+    { num: copies.length, label: "copies" },
+    { num: `${fav}`, label: "favorites" },
+    { num: `${played} <small>%${playedPct}</small>`, label: "played" },
+    { num: physical, label: "on disc" },
+    { num: digital, label: "digital" },
+    { num: multi, label: "multi-platform" },
+    { num: withDlc, label: "with DLC" },
+    { num: withEd, label: "with editions" }
+  ];
+
+  const mostCopies = [...G].sort((a, b) => (b.copies || []).length - (a.copies || []).length)[0];
+  const mostDlc = [...G].sort((a, b) => (b.dlc || []).length - (a.dlc || []).length)[0];
+
+  let highlights = '<section class="panel highlights"><h2>Highlights</h2>';
+  if (mostCopies) highlights += `<p><span class="hl-label">Most copies</span> <strong>${esc(mostCopies.name)}</strong> — ${(mostCopies.copies || []).length}</p>`;
+  if (mostDlc && (mostDlc.dlc || []).length) highlights += `<p><span class="hl-label">Most DLC</span> <strong>${esc(mostDlc.name)}</strong> — ${mostDlc.dlc.length}</p>`;
+  highlights += "</section>";
+
+  return '<section class="stats-section">' +
+    `<h2 class="section-title">🎮 Games <span class="pill-count">${total}</span></h2>` +
+    tilesHTML(tiles) +
+    '<div class="panels">' +
+      panelHTML("By platform", byPlatform, "coral") +
+      panelHTML("By store / format", byStore, "blue") +
+      highlights +
+    "</div></section>";
+}
+
+function booksStatsHTML() {
+  const B = allBooks;
+  if (!B.length) return "";
+  const total = B.length;
+  const totalPages = B.reduce((s, b) => s + (b.pages || 0), 0);
+  const avg = total ? Math.round(totalPages / total) : 0;
+  const read = B.filter(b => b.is_read).length;
+  const fav = B.filter(b => b.is_favorite).length;
+  const readPct = total ? Math.round(100 * read / total) : 0;
+
+  const authors = tally(B.map(b => b.author));
+  const publishers = tally(B.map(b => b.publisher));
+  const langs = tally(B.map(b => b.original_language));
+  const genres = tally(B.map(b => b.genre));
+  const shelves = tally(B.map(b => b.shelf_id));
+  const fields = tally(B.map(b => b.field));
+
+  // publication centuries
+  const cmap = new Map();
+  B.forEach(b => {
+    if (b.year_num == null) return;
+    const start = Math.floor(b.year_num / 100) * 100;
+    cmap.set(start, (cmap.get(start) || 0) + 1);
+  });
+  const centuries = [...cmap.entries()].sort((a, b) => a[0] - b[0]).map(([start, c]) => {
+    const label = start < 0 ? `MÖ ${Math.abs(start)}` : `${start}'ler`;
+    return [label, c];
+  });
+
+  const tiles = [
+    { num: total, label: "kitap" },
+    { num: totalPages.toLocaleString("tr-TR"), label: "toplam sayfa" },
+    { num: avg, label: "ort. sayfa" },
+    { num: authors.length, label: "yazar" },
+    { num: publishers.length, label: "yayınevi" },
+    { num: langs.length, label: "orijinal dil" },
+    { num: genres.length, label: "tür" },
+    { num: shelves.length, label: "raf" },
+    { num: `${read} <small>%${readPct}</small>`, label: "okundu" },
+    { num: fav, label: "favori" }
+  ];
+
+  const longest = [...B].sort((a, b) => (b.pages || 0) - (a.pages || 0))[0];
+  const shortest = [...B].filter(b => b.pages > 0).sort((a, b) => a.pages - b.pages)[0];
+  const dated = B.filter(b => b.year_num != null);
+  const oldest = [...dated].sort((a, b) => a.year_num - b.year_num)[0];
+  const newest = [...dated].sort((a, b) => b.year_num - a.year_num)[0];
+
+  let highlights = '<section class="panel highlights"><h2>Öne çıkanlar</h2>';
+  if (longest)  highlights += `<p><span class="hl-label">En uzun</span> <strong>${esc(longest.title)}</strong> — ${longest.pages} sayfa</p>`;
+  if (shortest) highlights += `<p><span class="hl-label">En kısa</span> <strong>${esc(shortest.title)}</strong> — ${shortest.pages} sayfa</p>`;
+  if (oldest)   highlights += `<p><span class="hl-label">En eski</span> <strong>${esc(oldest.title)}</strong> — ${esc(oldest.publication_year)}</p>`;
+  if (newest)   highlights += `<p><span class="hl-label">En yeni</span> <strong>${esc(newest.title)}</strong> — ${esc(newest.publication_year)}</p>`;
+  if (authors[0]) highlights += `<p><span class="hl-label">En üretken</span> <strong>${esc(authors[0][0])}</strong> — ${authors[0][1]} kitap</p>`;
+  highlights += "</section>";
+
+  return '<section class="stats-section">' +
+    `<h2 class="section-title">📚 Kitaplar <span class="pill-count">${total}</span></h2>` +
+    tilesHTML(tiles) +
+    '<div class="panels">' +
+      panelHTML("Orijinal dile göre", langs, "teal", { limit: 10 }) +
+      panelHTML("Türlere göre", genres, "blue", { limit: 10 }) +
+      panelHTML("Alana göre", fields, "teal", { limit: 10 }) +
+      panelHTML("Raflara göre", shelves, "warm", { chip: true }) +
+      panelHTML("Basım dönemi", centuries, "blue") +
+      panelHTML("En çok kitabı olan yazarlar", authors, "warm", { limit: 8 }) +
+      highlights +
+    "</div></section>";
+}
+
+function renderStatsDashboard() {
+  document.getElementById("statsApp").innerHTML = gamesStatsHTML() + booksStatsHTML();
+  document.getElementById("collectionStat").innerText =
+    `${allGames.length} oyun · ${allBooks.length} kitap`;
+}
+
+async function ensureStats() {
+  const app = document.getElementById("statsApp");
+  app.innerHTML = '<p class="results-meta">Yükleniyor…</p>';
+  try {
+    if (!gamesLoaded) { allGames = await loadGames(); gamesLoaded = true; setLibraryCounts(allGames); }
+    if (!booksLoaded) { allBooks = await loadBooks(); booksLoaded = true; buildBookFilters(); }
+    renderStatsDashboard();
+  } catch (err) {
+    app.innerHTML = '<div class="empty"><strong>İstatistik yüklenemedi</strong>' + esc(err.message) + "</div>";
   }
 }

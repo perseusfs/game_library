@@ -744,3 +744,90 @@ table.books tbody tr:hover { background: var(--surface-2); }
 /* hide whichever library's controls/view are inactive */
 .lib-controls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .lib-controls[hidden], #games-view[hidden], #books-view[hidden] { display: none; }
+
+/* ============================================================
+   STATS DASHBOARD (third mode)
+   ============================================================ */
+
+body.lib-stats { --accent: #8b7bf0; --accent-soft: rgba(139,123,240,0.18); }
+body.lib-stats .wordmark { font-family: "Bricolage Grotesque", sans-serif; }
+
+.statsboard { animation: rise 0.5s ease both; }
+
+.stats-section { margin-bottom: 42px; }
+.section-title {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-title .pill-count { font-family: "JetBrains Mono", monospace; font-size: 13px; color: var(--muted); }
+
+.big-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.big-stat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+.big-num {
+  display: block;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.05;
+}
+.big-num small { font-size: 13px; color: var(--accent); font-weight: 500; margin-left: 5px; }
+.big-label {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-top: 9px;
+}
+
+.panels { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+.panel h2 { font-size: 15px; font-weight: 600; margin: 0 0 14px; }
+
+.bar-row {
+  display: grid;
+  grid-template-columns: 132px 1fr 42px;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 9px;
+}
+.bar-row:last-child { margin-bottom: 0; }
+.bar-name { font-size: 13px; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bar-track { background: var(--surface-2); border-radius: 6px; height: 10px; overflow: hidden; }
+.bar-fill { display: block; height: 100%; border-radius: 6px; background: var(--accent); transition: width 0.5s ease; }
+.bar-fill.coral { background: #FF5C39; }
+.bar-fill.teal  { background: #1f9e89; }
+.bar-fill.blue  { background: #4d8dff; }
+.bar-fill.warm  { background: #f5c451; }
+.bar-val { font-size: 12px; color: var(--muted); text-align: right; font-family: "JetBrains Mono", monospace; }
+
+.panel.highlights p { margin: 9px 0; font-size: 14px; color: var(--text); }
+.panel.highlights p:first-of-type { margin-top: 0; }
+.hl-label {
+  display: inline-block; min-width: 76px;
+  font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted);
+}
+
+#stats-view[hidden] { display: none; }
+
+@media (max-width: 760px) { .panels { grid-template-columns: 1fr; } }
