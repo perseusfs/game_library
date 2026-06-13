@@ -593,3 +593,125 @@ body {
     transition-duration: 0.001ms !important;
   }
 }
+
+/* ============================================================
+   MODE SWITCH + PER-LIBRARY THEMING
+   ============================================================ */
+
+.modeswitch {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.ms-btn {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+  padding: 7px 14px;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: background 0.16s, color 0.16s;
+}
+.ms-btn:hover { color: var(--text); }
+.ms-btn.active { background: var(--accent); color: #15110f; }
+
+/* Books mode re-skins the accent (teal) and uses a serif for titles */
+body.lib-books {
+  --accent:      #1f9e89;
+  --accent-soft: rgba(31, 158, 137, 0.18);
+}
+body.lib-books .ms-btn.active { color: #06201c; }
+body.lib-books .stat-num { font-family: "Fraunces", serif; font-weight: 600; }
+body.lib-books .wordmark  { font-family: "Fraunces", serif; }
+
+/* ============================================================
+   BOOKS TABLE
+   ============================================================ */
+
+.table-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  animation: rise 0.5s ease both;
+}
+table.books { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+table.books thead th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 12px 12px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-glow);
+}
+table.books tbody td {
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+table.books tbody tr:last-child td { border-bottom: 0; }
+table.books tbody tr:hover { background: var(--surface-2); }
+
+.b-fav, .b-read { width: 44px; text-align: center; }
+.b-pages, .b-year { text-align: right; white-space: nowrap; color: var(--muted); font-family: "JetBrains Mono", monospace; font-size: 12px; }
+.b-shelf { text-align: center; }
+.b-title-cell { min-width: 220px; }
+
+.b-title {
+  display: block;
+  font-family: "Fraunces", serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.25;
+}
+.b-author { display: block; font-size: 12px; color: var(--muted); margin-top: 2px; }
+.b-genre, .b-lang { color: var(--muted); }
+
+.shelf-chip {
+  display: inline-block;
+  min-width: 1.5em;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* table toggle buttons */
+.btoggle {
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--faint);
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.btoggle:hover { color: var(--text); }
+.btoggle.fav.on { color: var(--gold); border-color: rgba(245,196,81,0.5); }
+.btoggle.read.on { color: #6ee7a8; border-color: rgba(110,231,168,0.5); }
+.bstatic { font-size: 14px; color: var(--faint); }
+.bstatic.fav.on { color: var(--gold); }
+.bstatic.read.on { color: #6ee7a8; }
+
+/* book modal is wider with a 2-col grid */
+.modal-wide { max-width: 620px; }
+.book-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.book-grid .span-2 { grid-column: 1 / -1; }
+@media (max-width: 560px) { .book-grid { grid-template-columns: 1fr; } }
+
+/* hide whichever library's controls/view are inactive */
+.lib-controls[hidden], #games-view[hidden], #books-view[hidden] { display: none; }

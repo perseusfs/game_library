@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Game Library</title>
+  <title>Library</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="lib-games">
 
   <header class="masthead">
     <div class="masthead-inner">
@@ -19,57 +19,73 @@
       <div class="brand">
         <span class="brand-mark" aria-hidden="true"></span>
         <div class="brand-text">
-          <h1 class="wordmark">Game Library</h1>
-          <p class="brand-stat" id="collectionStat">Loading collection…</p>
+          <h1 class="wordmark" id="wordmark">Game Library</h1>
+          <p class="brand-stat" id="collectionStat">Loading…</p>
         </div>
+      </div>
+
+      <div class="modeswitch" id="modeSwitch" role="tablist" aria-label="Library">
+        <button class="ms-btn active" data-lib="games" role="tab">🎮 Games</button>
+        <button class="ms-btn" data-lib="books" role="tab">📚 Books</button>
       </div>
 
       <div class="controls">
 
         <div class="search-box">
           <span class="search-icon" aria-hidden="true">⌕</span>
-          <input id="search" type="search" placeholder="Search games" aria-label="Search games">
+          <input id="search" type="search" placeholder="Search games" aria-label="Search">
         </div>
 
-        <div class="filters" id="platformFilters">
-          <label class="pill">
-            <input type="checkbox" value="pc">
-            <span class="pill-body">
-              <span class="dot dot-pc" aria-hidden="true"></span>
-              PC
-              <span class="pill-count" id="count-pc">0</span>
-            </span>
-          </label>
-          <label class="pill">
-            <input type="checkbox" value="ps">
-            <span class="pill-body">
-              <span class="dot dot-ps" aria-hidden="true"></span>
-              PlayStation
-              <span class="pill-count" id="count-ps">0</span>
-            </span>
-          </label>
+        <!-- GAMES controls -->
+        <div class="lib-controls" id="games-controls">
+          <div class="filters" id="platformFilters">
+            <label class="pill">
+              <input type="checkbox" value="pc">
+              <span class="pill-body"><span class="dot dot-pc"></span>PC <span class="pill-count" id="count-pc">0</span></span>
+            </label>
+            <label class="pill">
+              <input type="checkbox" value="ps">
+              <span class="pill-body"><span class="dot dot-ps"></span>PlayStation <span class="pill-count" id="count-ps">0</span></span>
+            </label>
+          </div>
+          <div class="filters" id="flagFilters">
+            <label class="pill"><input type="checkbox" value="favorite"><span class="pill-body"><span class="glyph">★</span> Favorites</span></label>
+            <label class="pill"><input type="checkbox" value="played"><span class="pill-body"><span class="glyph">✔</span> Played</span></label>
+          </div>
+          <div class="select-box">
+            <select id="sort" aria-label="Sort games">
+              <option value="none">Sort: Default</option>
+              <option value="name_asc">Name A–Z</option>
+              <option value="name_desc">Name Z–A</option>
+            </select>
+          </div>
         </div>
 
-        <div class="filters" id="flagFilters">
-          <label class="pill">
-            <input type="checkbox" value="favorite">
-            <span class="pill-body"><span class="glyph">★</span> Favorites</span>
-          </label>
-          <label class="pill">
-            <input type="checkbox" value="played">
-            <span class="pill-body"><span class="glyph">✔</span> Played</span>
-          </label>
+        <!-- BOOKS controls -->
+        <div class="lib-controls" id="books-controls" hidden>
+          <div class="select-box"><select id="bGenre" aria-label="Tür"><option value="">Tür · hepsi</option></select></div>
+          <div class="select-box"><select id="bLang" aria-label="Orijinal dil"><option value="">Dil · hepsi</option></select></div>
+          <div class="select-box"><select id="bShelf" aria-label="Raf"><option value="">Raf · hepsi</option></select></div>
+          <div class="select-box">
+            <select id="bStatus" aria-label="Durum">
+              <option value="">Durum · hepsi</option>
+              <option value="read">Okundu</option>
+              <option value="unread">Okunmadı</option>
+              <option value="favorite">Favori</option>
+            </select>
+          </div>
+          <div class="select-box">
+            <select id="bSort" aria-label="Sırala">
+              <option value="title">Başlığa göre</option>
+              <option value="author">Yazara göre</option>
+              <option value="year">Yıla göre</option>
+              <option value="pages">Sayfaya göre</option>
+              <option value="added">Eklenme sırası</option>
+            </select>
+          </div>
         </div>
 
-        <div class="select-box">
-          <select id="sort" aria-label="Sort games">
-            <option value="none">Sort: Default</option>
-            <option value="name_asc">Name A–Z</option>
-            <option value="name_desc">Name Z–A</option>
-          </select>
-        </div>
-
-        <button class="btn btn-soft" id="addBtn" hidden>+ Add game</button>
+        <button class="btn btn-soft" id="addBtn" hidden>+ Add</button>
         <button class="btn btn-soft" id="loginBtn" hidden>Sign in</button>
 
       </div>
@@ -77,13 +93,26 @@
   </header>
 
   <main class="content">
-    <section class="stats" id="stats" aria-label="Collection overview"></section>
-    <p class="results-meta" id="resultsMeta"></p>
-    <div id="app" class="grid"></div>
-    <div id="empty" class="empty" hidden></div>
+
+    <!-- GAMES view -->
+    <section id="games-view">
+      <section class="stats" id="stats"></section>
+      <p class="results-meta" id="resultsMeta"></p>
+      <div id="app" class="grid"></div>
+      <div id="empty" class="empty" hidden></div>
+    </section>
+
+    <!-- BOOKS view -->
+    <section id="books-view" hidden>
+      <section class="stats" id="bStats"></section>
+      <p class="results-meta" id="bResultsMeta"></p>
+      <div id="bApp"></div>
+      <div id="bEmpty" class="empty" hidden></div>
+    </section>
+
   </main>
 
-  <!-- save bar (local mode only) -->
+  <!-- save bar (local mode) -->
   <div class="savebar" id="savebar" hidden>
     <span class="savebar-text" id="savebarText"></span>
     <div class="savebar-actions">
@@ -97,12 +126,8 @@
     <div class="modal-card">
       <h2 class="modal-title">Owner sign in</h2>
       <p class="modal-sub">Only the owner can edit the library.</p>
-      <label class="field"><span>Email</span>
-        <input id="loginEmail" type="email" autocomplete="username">
-      </label>
-      <label class="field"><span>Password</span>
-        <input id="loginPass" type="password" autocomplete="current-password">
-      </label>
+      <label class="field"><span>Email</span><input id="loginEmail" type="email" autocomplete="username"></label>
+      <label class="field"><span>Password</span><input id="loginPass" type="password" autocomplete="current-password"></label>
       <p class="form-error" id="loginError" hidden></p>
       <div class="modal-actions">
         <button class="btn btn-ghost" data-close="loginModal">Cancel</button>
@@ -111,47 +136,26 @@
     </div>
   </div>
 
-  <!-- add-game modal -->
+  <!-- game add modal -->
   <div class="modal" id="addModal" hidden>
     <div class="modal-card">
       <h2 class="modal-title">Add a game</h2>
       <p class="modal-sub">If the game already exists, this adds the platform and store as another copy.</p>
-      <label class="field"><span>Name</span>
-        <input id="gName" type="text">
-      </label>
-      <label class="field"><span>Cover image URL (optional)</span>
-        <input id="gImage" type="url" placeholder="https://...">
-      </label>
+      <label class="field"><span>Name</span><input id="gName" type="text"></label>
+      <label class="field"><span>Cover image URL (optional)</span><input id="gImage" type="url" placeholder="https://..."></label>
       <div class="field-row">
         <label class="field"><span>Platform</span>
-          <select id="gPlatform">
-            <option value="pc">PC</option>
-            <option value="ps5">PS5</option>
-            <option value="ps4">PS4</option>
-            <option value="ps3">PS3</option>
-          </select>
+          <select id="gPlatform"><option value="pc">PC</option><option value="ps5">PS5</option><option value="ps4">PS4</option><option value="ps3">PS3</option></select>
         </label>
         <label class="field"><span>Type</span>
-          <select id="gType">
-            <option value="digital">Digital</option>
-            <option value="physical">Physical (disc)</option>
-          </select>
+          <select id="gType"><option value="digital">Digital</option><option value="physical">Physical (disc)</option></select>
         </label>
         <label class="field"><span>Store</span>
-          <select id="gStore">
-            <option value="">— none —</option>
-            <option value="steam">Steam</option>
-            <option value="epic">Epic</option>
-            <option value="ps_store">PS Store</option>
-          </select>
+          <select id="gStore"><option value="">— none —</option><option value="steam">Steam</option><option value="epic">Epic</option><option value="ps_store">PS Store</option></select>
         </label>
       </div>
-      <label class="field"><span>DLC — one per line (optional)</span>
-        <textarea id="gDlc" rows="2" placeholder="Season Pass&#10;Expansion Pack"></textarea>
-      </label>
-      <label class="field"><span>Editions — one per line (optional)</span>
-        <textarea id="gEdition" rows="2" placeholder="Deluxe Edition"></textarea>
-      </label>
+      <label class="field"><span>DLC — one per line (optional)</span><textarea id="gDlc" rows="2"></textarea></label>
+      <label class="field"><span>Editions — one per line (optional)</span><textarea id="gEdition" rows="2"></textarea></label>
       <p class="form-error" id="addError" hidden></p>
       <div class="modal-actions">
         <button class="btn btn-ghost" data-close="addModal">Cancel</button>
@@ -160,7 +164,36 @@
     </div>
   </div>
 
-  <!-- Supabase client (safe to load on GitHub Pages) -->
+  <!-- book add / edit modal -->
+  <div class="modal" id="bookModal" hidden>
+    <div class="modal-card modal-wide">
+      <h2 class="modal-title" id="bookModalTitle">Yeni kitap</h2>
+      <div class="book-grid">
+        <label class="field span-2"><span>Kitap adı *</span><input id="bTitle" type="text"></label>
+        <label class="field"><span>Yazar</span><input id="bAuthor" list="dl-authors" type="text"></label>
+        <label class="field"><span>Yayınevi</span><input id="bPublisher" list="dl-publishers" type="text"></label>
+        <label class="field"><span>Alan</span><input id="bField" list="dl-fields" type="text" placeholder="örn. Rus Edebiyatı"></label>
+        <label class="field"><span>Tür</span><input id="bGenreIn" list="dl-genres" type="text" placeholder="örn. Roman"></label>
+        <label class="field"><span>Orijinal dil</span><input id="bLangIn" list="dl-langs" type="text" placeholder="örn. Rusça"></label>
+        <label class="field"><span>Raf kodu</span><input id="bShelfIn" list="dl-shelves" type="text" placeholder="U / B"></label>
+        <label class="field"><span>Sayfa sayısı</span><input id="bPages" type="number" min="0"></label>
+        <label class="field"><span>Basım yılı</span><input id="bYear" type="number" step="1" placeholder="örn. 1866 (MÖ için -399)"></label>
+      </div>
+      <p class="form-error" id="bookError" hidden></p>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" data-close="bookModal">Vazgeç</button>
+        <button class="btn btn-primary" id="bookSubmit">Kaydet</button>
+      </div>
+    </div>
+  </div>
+
+  <datalist id="dl-authors"></datalist>
+  <datalist id="dl-publishers"></datalist>
+  <datalist id="dl-fields"></datalist>
+  <datalist id="dl-genres"></datalist>
+  <datalist id="dl-langs"></datalist>
+  <datalist id="dl-shelves"></datalist>
+
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="config.js"></script>
   <script src="app.js"></script>

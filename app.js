@@ -17,9 +17,16 @@ if (MODE === "supabase" && window.supabase) {
 
 let allGames = [];
 let session = null;     // supabase session (null = signed out)
-let dirty = false;      // local mode: unsaved edits waiting to download
+let dirty = false;      // local mode: unsaved game edits waiting to download
 
 let state = { search: "", platforms: [], flags: [], sort: "none" };
+
+// ---- books + library switch ----
+let library = "games";  // "games" | "books"
+let allBooks = [];
+let booksLoaded = false;
+let dirtyBooks = false;
+let bookState = { search: "", genre: "", language: "", shelf: "", status: "", sort: "title" };
 
 // In local mode the page is your own machine, so you are always the owner.
 // In supabase mode you are the owner only while signed in.
@@ -299,23 +306,27 @@ async function submitAddGame() {
 
 function updateSaveBar() {
   const bar = document.getElementById("savebar");
-  bar.hidden = !dirty;
-  if (dirty) {
+  bar.hidden = !(dirty || dirtyBooks);
+  if (dirty || dirtyBooks) {
     document.getElementById("savebarText").innerText = "You have unsaved changes";
   }
 }
 
-function saveChanges() {
-  const blob = new Blob([JSON.stringify(allGames, null, 2)], { type: "application/json" });
+function download(filename, data) {
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = "games_enriched.json";
+  a.download = filename;
   document.body.appendChild(a);
   a.click();
   a.remove();
   URL.revokeObjectURL(url);
-  dirty = false;
+}
+
+function saveChanges() {
+  if (dirty)      { download("games_enriched.json", allGames); dirty = false; }
+  if (dirtyBooks) { download("books.json", allBooks);          dirtyBooks = false; }
   updateSaveBar();
 }
 
@@ -485,7 +496,7 @@ async function initAuth() {
   sb.auth.onAuthStateChange((_event, newSession) => {
     session = newSession;
     updateAuthUI();
-    applyFilters();   // re-render so edit buttons appear / disappear
+    renderActive();   // re-render active library so edit controls appear/disappear
   });
 }
 
@@ -500,6 +511,7 @@ function updateAuthUI() {
     loginBtn.hidden = true;   // no login needed on your own machine
   }
   addBtn.hidden = !isOwner();
+  addBtn.innerText = library === "games" ? "+ Add game" : "+ Kitap ekle";
 }
 
 async function doLogin() {
@@ -540,8 +552,9 @@ function debounce(fn, ms) {
 const runSearch = debounce(() => applyFilters(), 120);
 
 document.getElementById("search").addEventListener("input", e => {
-  state.search = e.target.value.toLowerCase().trim();
-  runSearch();
+  const v = e.target.value.toLowerCase().trim();
+  if (library === "games") { state.search = v; runSearch(); }
+  else { bookState.search = v; applyBookFilters(); }
 });
 
 document.querySelectorAll("#platformFilters input").forEach(cb => {
@@ -567,11 +580,14 @@ document.getElementById("sort").addEventListener("change", e => {
 document.getElementById("saveBtn").addEventListener("click", saveChanges);
 document.getElementById("discardBtn").addEventListener("click", () => location.reload());
 window.addEventListener("beforeunload", e => {
-  if (dirty) { e.preventDefault(); e.returnValue = ""; }
+  if (dirty || dirtyBooks) { e.preventDefault(); e.returnValue = ""; }
 });
 
 // add game
-document.getElementById("addBtn").addEventListener("click", () => openModal("addModal"));
+document.getElementById("addBtn").addEventListener("click", () => {
+  if (library === "games") openModal("addModal");
+  else openBookForm(null);
+});
 document.getElementById("addSubmit").addEventListener("click", submitAddGame);
 
 // login
@@ -594,4 +610,388 @@ document.addEventListener("keydown", e => {
 
 // start auth
 if (MODE === "supabase") initAuth();
+
+// ---- books events ----
+document.getElementById("bGenre").addEventListener("change", e => { bookState.genre = e.target.value; applyBookFilters(); });
+document.getElementById("bLang").addEventListener("change", e => { bookState.language = e.target.value; applyBookFilters(); });
+document.getElementById("bShelf").addEventListener("change", e => { bookState.shelf = e.target.value; applyBookFilters(); });
+document.getElementById("bStatus").addEventListener("change", e => { bookState.status = e.target.value; applyBookFilters(); });
+document.getElementById("bSort").addEventListener("change", e => { bookState.sort = e.target.value; applyBookFilters(); });
+document.getElementById("bookSubmit").addEventListener("click", submitBook);
+
+// ---- mode switch ----
+document.querySelectorAll("#modeSwitch .ms-btn").forEach(btn => {
+  btn.addEventListener("click", () => switchLibrary(btn.dataset.lib));
+});
+
+// start in the library named by the URL hash (#books), else games
+switchLibrary(location.hash.replace("#", "") === "books" ? "books" : "games");
 updateAuthUI();
+
+/* ============================================================
+   BOOKS MODULE
+   ============================================================ */
+
+let editingBookId = null;
+
+function parseYear(value) {
+  const s = String(value == null ? "" : value).trim();
+  const body = s.startsWith("-") ? s.slice(1) : s;
+  if (!/^[0-9]+$/.test(body)) return null;
+  const n = parseInt(s, 10);
+  return (n >= -9999 && n <= 9999) ? n : null;
+}
+
+async function loadBooks() {
+  if (MODE === "supabase") {
+    const { data, error } = await sb.from("Books").select("*").order("title");
+    if (error) throw error;
+    return data || [];
+  }
+  const res = await fetch("books.json?v=" + Date.now());
+  if (!res.ok) throw new Error("HTTP " + res.status);
+  return res.json();
+}
+
+function ensureBooks() {
+  if (booksLoaded) { renderBookStats(); applyBookFilters(); return; }
+  loadBooks()
+    .then(books => {
+      allBooks = books;
+      booksLoaded = true;
+      buildBookFilters();
+      renderBookStats();
+      applyBookFilters();
+    })
+    .catch(err => {
+      const empty = document.getElementById("bEmpty");
+      empty.hidden = false;
+      empty.innerHTML = "<strong>Kitaplar yüklenemedi</strong>" +
+        (MODE === "supabase"
+          ? "Supabase'de Books tablosu ve politikalar kurulu mu? (" + err.message + ")"
+          : "books.json dosyası index.html ile aynı klasörde mi? (" + err.message + ")");
+    });
+}
+
+function distinct(list, key) {
+  return [...new Set(list.map(b => (b[key] || "").trim()).filter(Boolean))]
+    .sort((a, b) => a.localeCompare(b, "tr"));
+}
+
+function fillSelect(id, values, firstLabel) {
+  const sel = document.getElementById(id);
+  sel.innerHTML = "";
+  const opt0 = document.createElement("option");
+  opt0.value = ""; opt0.textContent = firstLabel;
+  sel.appendChild(opt0);
+  values.forEach(v => {
+    const o = document.createElement("option");
+    o.value = v; o.textContent = v;
+    sel.appendChild(o);
+  });
+}
+
+function fillDatalist(id, values) {
+  const dl = document.getElementById(id);
+  dl.innerHTML = "";
+  values.forEach(v => {
+    const o = document.createElement("option");
+    o.value = v;
+    dl.appendChild(o);
+  });
+}
+
+function buildBookFilters() {
+  fillSelect("bGenre", distinct(allBooks, "genre"), "Tür · hepsi");
+  fillSelect("bLang",  distinct(allBooks, "original_language"), "Dil · hepsi");
+  fillSelect("bShelf", distinct(allBooks, "shelf_id"), "Raf · hepsi");
+  fillDatalist("dl-authors",    distinct(allBooks, "author"));
+  fillDatalist("dl-publishers", distinct(allBooks, "publisher"));
+  fillDatalist("dl-fields",     distinct(allBooks, "field"));
+  fillDatalist("dl-genres",     distinct(allBooks, "genre"));
+  fillDatalist("dl-langs",      distinct(allBooks, "original_language"));
+  fillDatalist("dl-shelves",    distinct(allBooks, "shelf_id"));
+}
+
+function applyBookFilters() {
+  let list = [...allBooks];
+  const q = bookState.search;
+  if (q) {
+    list = list.filter(b =>
+      [b.title, b.author, b.publisher].some(x => (x || "").toLowerCase().includes(q)));
+  }
+  if (bookState.genre)    list = list.filter(b => b.genre === bookState.genre);
+  if (bookState.language) list = list.filter(b => b.original_language === bookState.language);
+  if (bookState.shelf)    list = list.filter(b => b.shelf_id === bookState.shelf);
+  if (bookState.status === "read")     list = list.filter(b => b.is_read);
+  if (bookState.status === "unread")   list = list.filter(b => !b.is_read);
+  if (bookState.status === "favorite") list = list.filter(b => b.is_favorite);
+
+  const s = bookState.sort;
+  if (s === "title")  list.sort((a, b) => (a.title || "").localeCompare(b.title || "", "tr"));
+  if (s === "author") list.sort((a, b) => (a.author || "").localeCompare(b.author || "", "tr"));
+  if (s === "year")   list.sort((a, b) => (parseYear(a.publication_year) ?? 99999) - (parseYear(b.publication_year) ?? 99999));
+  if (s === "pages")  list.sort((a, b) => (b.pages || 0) - (a.pages || 0));
+  if (s === "added")  list.sort((a, b) => String(b.date_added || "").localeCompare(String(a.date_added || "")));
+
+  renderBooks(list);
+}
+
+function renderBookStats() {
+  const total = allBooks.length;
+  const read = allBooks.filter(b => b.is_read).length;
+  const fav = allBooks.filter(b => b.is_favorite).length;
+  const pages = allBooks.reduce((s, b) => s + (b.pages || 0), 0);
+  const authors = new Set(allBooks.map(b => b.author).filter(Boolean)).size;
+  const langs = new Set(allBooks.map(b => b.original_language).filter(Boolean)).size;
+  const pct = total ? Math.round(100 * read / total) : 0;
+
+  const tiles = [
+    { num: total, label: "kitap" },
+    { num: read + "  %" + pct, label: "okundu", cls: "accent" },
+    { num: fav, label: "favori", cls: "gold" },
+    { num: pages.toLocaleString("tr-TR"), label: "sayfa" },
+    { num: authors, label: "yazar" },
+    { num: langs, label: "orijinal dil" }
+  ];
+  const el = document.getElementById("bStats");
+  el.innerHTML = "";
+  tiles.forEach(t => {
+    const tile = document.createElement("div");
+    tile.className = "stat" + (t.cls ? " " + t.cls : "");
+    const num = document.createElement("div");
+    num.className = "stat-num";
+    num.innerText = t.num;
+    const label = document.createElement("div");
+    label.className = "stat-label";
+    label.innerText = t.label;
+    tile.appendChild(num); tile.appendChild(label);
+    el.appendChild(tile);
+  });
+
+  document.getElementById("collectionStat").innerText = `${total} kitap · ${authors} yazar`;
+}
+
+function bookToggleBtn(b, key, glyph, cls) {
+  const on = !!b[key];
+  if (isOwner()) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "btoggle " + cls + (on ? " on" : "");
+    btn.innerText = glyph;
+    btn.title = cls === "fav" ? "Favori" : "Okundu";
+    btn.addEventListener("click", () => toggleBookFlag(b, key));
+    return btn;
+  }
+  const span = document.createElement("span");
+  span.className = "bstatic " + cls + (on ? " on" : "");
+  span.innerText = on ? glyph : "";
+  return span;
+}
+
+function renderBooks(list) {
+  const wrap = document.getElementById("bApp");
+  const empty = document.getElementById("bEmpty");
+  const meta = document.getElementById("bResultsMeta");
+
+  meta.innerText = list.length === allBooks.length
+    ? `${list.length} kitap`
+    : `${list.length} / ${allBooks.length} kitap`;
+
+  if (list.length === 0) {
+    wrap.innerHTML = "";
+    empty.hidden = false;
+    empty.innerHTML = "<strong>Eşleşen kitap yok</strong>Aramayı veya filtreleri temizle.";
+    return;
+  }
+  empty.hidden = true;
+
+  const table = document.createElement("table");
+  table.className = "books";
+  table.innerHTML =
+    "<thead><tr>" +
+      "<th class='b-fav'></th><th>Kitap</th><th>Tür</th><th>Orijinal Dil</th>" +
+      "<th class='b-year'>Yıl</th><th class='b-pages'>Sayfa</th>" +
+      "<th class='b-shelf'>Raf</th><th class='b-read'>Okundu</th>" +
+    "</tr></thead>";
+  const tbody = document.createElement("tbody");
+
+  list.forEach(b => {
+    const tr = document.createElement("tr");
+
+    const favTd = document.createElement("td");
+    favTd.className = "b-fav";
+    favTd.appendChild(bookToggleBtn(b, "is_favorite", "★", "fav"));
+    tr.appendChild(favTd);
+
+    const titleTd = document.createElement("td");
+    titleTd.className = "b-title-cell";
+    const t = document.createElement("span");
+    t.className = "b-title"; t.innerText = b.title || "";
+    const a = document.createElement("span");
+    a.className = "b-author";
+    a.innerText = (b.author || "") + (b.publisher ? " · " + b.publisher : "");
+    titleTd.appendChild(t); titleTd.appendChild(a);
+    tr.appendChild(titleTd);
+
+    const genreTd = document.createElement("td");
+    genreTd.className = "b-genre"; genreTd.innerText = b.genre || "";
+    tr.appendChild(genreTd);
+
+    const langTd = document.createElement("td");
+    langTd.className = "b-lang"; langTd.innerText = b.original_language || "";
+    tr.appendChild(langTd);
+
+    const yearTd = document.createElement("td");
+    yearTd.className = "b-year"; yearTd.innerText = b.publication_year || "";
+    tr.appendChild(yearTd);
+
+    const pagesTd = document.createElement("td");
+    pagesTd.className = "b-pages"; pagesTd.innerText = b.pages || "";
+    tr.appendChild(pagesTd);
+
+    const shelfTd = document.createElement("td");
+    shelfTd.className = "b-shelf";
+    if (b.shelf_id) {
+      const chip = document.createElement("span");
+      chip.className = "shelf-chip"; chip.innerText = b.shelf_id;
+      shelfTd.appendChild(chip);
+    }
+    tr.appendChild(shelfTd);
+
+    const readTd = document.createElement("td");
+    readTd.className = "b-read";
+    readTd.appendChild(bookToggleBtn(b, "is_read", "✔", "read"));
+    tr.appendChild(readTd);
+
+    tbody.appendChild(tr);
+  });
+
+  table.appendChild(tbody);
+  wrap.innerHTML = "";
+  wrap.appendChild(table);
+}
+
+async function toggleBookFlag(b, key) {
+  if (!isOwner()) return;
+  const prev = b[key] ? 1 : 0;
+  b[key] = prev ? 0 : 1;
+  renderBookStats();
+  applyBookFilters();
+
+  if (MODE === "supabase") {
+    const { error } = await sb.from("Books").update({ [key]: b[key] }).eq("id", b.id);
+    if (error) {
+      b[key] = prev;
+      renderBookStats();
+      applyBookFilters();
+      alert("Kaydedilemedi: " + error.message);
+    }
+  } else {
+    dirtyBooks = true;
+    updateSaveBar();
+  }
+}
+
+/* ---- add a book ---- */
+
+function openBookForm(book) {
+  editingBookId = book ? book.id : null;
+  document.getElementById("bookModalTitle").innerText = book ? "Kitabı düzenle" : "Yeni kitap";
+  const v = (id, val) => { document.getElementById(id).value = val ?? ""; };
+  v("bTitle", book && book.title);
+  v("bAuthor", book && book.author);
+  v("bPublisher", book && book.publisher);
+  v("bField", book && book.field);
+  v("bGenreIn", book && book.genre);
+  v("bLangIn", book && book.original_language);
+  v("bShelfIn", book && book.shelf_id);
+  v("bPages", book && book.pages);
+  v("bYear", book && book.publication_year);
+  document.getElementById("bookError").hidden = true;
+  openModal("bookModal");
+}
+
+async function submitBook() {
+  const get = id => document.getElementById(id).value.trim();
+  const errEl = document.getElementById("bookError");
+  const fail = msg => { errEl.innerText = msg; errEl.hidden = false; };
+  errEl.hidden = true;
+
+  const title = get("bTitle");
+  if (!title) return fail("Kitap adı gerekli.");
+
+  const record = {
+    title,
+    author: get("bAuthor"),
+    publisher: get("bPublisher"),
+    field: get("bField"),
+    genre: get("bGenreIn"),
+    shelf_id: get("bShelfIn"),
+    pages: parseInt(get("bPages"), 10) || 0,
+    publication_year: get("bYear"),
+    original_language: get("bLangIn"),
+    is_favorite: 0,
+    is_read: 0,
+    date_added: new Date().toISOString().slice(0, 19).replace("T", " "),
+    year_num: parseYear(get("bYear"))
+  };
+
+  if (MODE === "supabase") {
+    const { data, error } = await sb.from("Books").insert(record).select();
+    if (error) return fail("Eklenemedi: " + error.message);
+    record.id = data && data[0] ? data[0].id : undefined;
+  } else {
+    record.id = allBooks.reduce((m, b) => Math.max(m, b.id || 0), 0) + 1;
+    dirtyBooks = true;
+    updateSaveBar();
+  }
+
+  allBooks.push(record);
+  buildBookFilters();      // a new genre/author may now exist
+  renderBookStats();
+  applyBookFilters();
+  closeModal("bookModal");
+}
+
+/* ============================================================
+   LIBRARY SWITCH (shell)
+   ============================================================ */
+
+function renderActive() {
+  if (library === "games") { renderStats(); applyFilters(); }
+  else { renderBookStats(); applyBookFilters(); }
+}
+
+function switchLibrary(lib) {
+  library = lib;
+  document.body.className = "lib-" + lib;
+  if (location.hash.replace("#", "") !== lib) location.hash = lib;
+
+  document.getElementById("games-controls").hidden = lib !== "games";
+  document.getElementById("books-controls").hidden = lib !== "books";
+  document.getElementById("games-view").hidden = lib !== "games";
+  document.getElementById("books-view").hidden = lib !== "books";
+
+  document.querySelectorAll("#modeSwitch .ms-btn").forEach(btn =>
+    btn.classList.toggle("active", btn.dataset.lib === lib));
+
+  document.getElementById("wordmark").innerText = lib === "games" ? "Game Library" : "Kitaplık";
+
+  const search = document.getElementById("search");
+  if (lib === "games") {
+    search.placeholder = "Search games";
+    search.value = state.search;
+  } else {
+    search.placeholder = "Kitap, yazar veya yayınevi ara…";
+    search.value = bookState.search;
+  }
+
+  updateAuthUI();
+
+  if (lib === "games") {
+    if (allGames.length) { setLibraryCounts(allGames); renderStats(); applyFilters(); }
+  } else {
+    ensureBooks();
+  }
+}
