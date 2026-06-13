@@ -1131,7 +1131,7 @@ function gamesStatsHTML() {
     { num: copies.length, label: "kopya" },
     { num: `${fav}`, label: "favori" },
     { num: `${played} <small>%${playedPct}</small>`, label: "oynandı" },
-    { num: physical, label: "disk" },
+    { num: physical, label: "fiziksel" },
     { num: digital, label: "dijital" },
     { num: multi, label: "çok platform" },
     { num: withDlc, label: "DLC'li" },
