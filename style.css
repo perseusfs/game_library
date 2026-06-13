@@ -910,3 +910,6 @@ body.lib-books .detail-title { font-family: "Fraunces", serif; }
   .detail-cover img { aspect-ratio: 16 / 9; }
   .detail-body { max-height: 60vh; }
 }
+
+/* edit button inside the game detail view */
+.detail-edit { margin-top: 18px; }

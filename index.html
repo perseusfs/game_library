@@ -210,7 +210,26 @@
           <div class="detail-platforms badges" id="gdPlatforms"></div>
           <p class="detail-summary" id="gdSummary"></p>
           <div class="detail-extra" id="gdExtra"></div>
+          <button class="btn btn-soft detail-edit" id="gdEditBtn" hidden>Düzenle</button>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- edit game -->
+  <div class="modal" id="editModal" hidden>
+    <div class="modal-card">
+      <h2 class="modal-title">Oyunu düzenle</h2>
+      <p class="modal-sub">Eksik veya yanlış bilgileri düzelt. Platform/kopya bilgisi burada değişmez.</p>
+      <label class="field"><span>Ad</span><input id="eName" type="text"></label>
+      <label class="field"><span>Kapak görseli URL</span><input id="eImage" type="url" placeholder="https://..."></label>
+      <label class="field"><span>Yıl / çıkış tarihi</span><input id="eReleased" type="text" placeholder="1998 veya 1998-11-30"></label>
+      <label class="field"><span>Türler — virgülle ayır</span><input id="eGenres" type="text" placeholder="Action, RPG"></label>
+      <label class="field"><span>Özet</span><textarea id="eDescription" rows="6"></textarea></label>
+      <p class="form-error" id="editError" hidden></p>
+      <div class="modal-actions">
+        <button class="btn btn-soft" data-close="editModal">Vazgeç</button>
+        <button class="btn btn-primary" id="editSubmit">Kaydet</button>
       </div>
     </div>
   </div>

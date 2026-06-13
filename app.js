@@ -27,6 +27,7 @@ let allBooks = [];
 let gamesLoaded = false;
 let booksLoaded = false;
 let dirtyBooks = false;
+let currentDetailGame = null;   // game shown in the detail/edit view
 let bookState = { search: "", genre: "", language: "", shelf: "", status: "", sort: "title" };
 
 // In local mode the page is your own machine, so you are always the owner.
@@ -90,6 +91,15 @@ function placeholderFor(name) {
         "dominant-baseline='central'>" + letter + "</text>" +
     "</svg>";
   return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
+}
+
+// Rewrite a full-size RAWG image URL to a smaller, faster resized variant.
+// e.g. .../media/games/ab/xyz.jpg -> .../media/resize/420/-/games/ab/xyz.jpg
+// Non-RAWG or already-resized URLs are returned unchanged.
+function rawgImg(url, width) {
+  if (!url || url.indexOf("media.rawg.io/media/") === -1) return url;
+  if (url.indexOf("/media/resize/") !== -1 || url.indexOf("/media/crop/") !== -1) return url;
+  return url.replace("/media/", "/media/resize/" + width + "/-/");
 }
 
 /* ============================================================
@@ -364,9 +374,20 @@ function render(games) {
 
     const img = document.createElement("img");
     img.loading = "lazy";
+    img.decoding = "async";
     img.alt = g.name || "Game cover";
-    img.src = g.image || placeholderFor(g.name);
-    img.onerror = () => { img.onerror = null; img.src = placeholderFor(g.name); };
+    const full = g.image || "";
+    img.dataset.full = full;
+    img.src = full ? rawgImg(full, 420) : placeholderFor(g.name);
+    img.onerror = () => {
+      // 1st failure: try the full-size original; 2nd: fall back to placeholder
+      if (img.dataset.full && img.src !== img.dataset.full) {
+        img.src = img.dataset.full;
+      } else {
+        img.onerror = null;
+        img.src = placeholderFor(g.name);
+      }
+    };
     cover.appendChild(img);
 
     // toggle actions — only the owner can edit
@@ -595,6 +616,8 @@ document.getElementById("addBtn").addEventListener("click", () => {
   else openBookForm(null);
 });
 document.getElementById("addSubmit").addEventListener("click", submitAddGame);
+document.getElementById("gdEditBtn").addEventListener("click", openGameEdit);
+document.getElementById("editSubmit").addEventListener("click", submitEditGame);
 
 // login
 document.getElementById("loginBtn").addEventListener("click", () => {
@@ -1207,8 +1230,20 @@ async function ensureStats() {
    ============================================================ */
 
 function openGameDetail(g) {
-  document.getElementById("gdCover").src = g.image || placeholderFor(g.name);
-  document.getElementById("gdCover").alt = g.name || "";
+  currentDetailGame = g;
+  const cover = document.getElementById("gdCover");
+  const full = g.image || "";
+  cover.dataset.full = full;
+  cover.src = full ? rawgImg(full, 600) : placeholderFor(g.name);
+  cover.onerror = () => {
+    if (cover.dataset.full && cover.src !== cover.dataset.full) {
+      cover.src = cover.dataset.full;
+    } else {
+      cover.onerror = null;
+      cover.src = placeholderFor(g.name);
+    }
+  };
+  cover.alt = g.name || "";
   document.getElementById("gdTitle").innerText = g.name || "";
 
   const meta = [];
@@ -1228,7 +1263,7 @@ function openGameDetail(g) {
 
   const summary = (g.description || "").trim();
   const sumEl = document.getElementById("gdSummary");
-  sumEl.innerText = summary || "Özet bilgisi yok. (enrich_games.py ile doldurabilirsin.)";
+  sumEl.innerText = summary || "Özet bilgisi yok. Düzenle ile ekleyebilirsin.";
   sumEl.classList.toggle("muted-text", !summary);
 
   const extra = [];
@@ -1236,5 +1271,53 @@ function openGameDetail(g) {
   if ((g.edition || []).length) extra.push("Sürümler: " + g.edition.join(", "));
   document.getElementById("gdExtra").innerText = extra.join("   ·   ");
 
+  document.getElementById("gdEditBtn").hidden = !isOwner();
+
   openModal("gameDetail");
+}
+
+/* ---- edit a game's metadata (fix wrong / missing info) ---- */
+
+function openGameEdit() {
+  const g = currentDetailGame;
+  if (!g || !isOwner()) return;
+  document.getElementById("eName").value = g.name || "";
+  document.getElementById("eImage").value = g.image || "";
+  document.getElementById("eReleased").value = g.released || "";
+  document.getElementById("eGenres").value = (g.genres || []).join(", ");
+  document.getElementById("eDescription").value = g.description || "";
+  document.getElementById("editError").hidden = true;
+  openModal("editModal");
+}
+
+async function submitEditGame() {
+  const g = currentDetailGame;
+  if (!g) return;
+  const errEl = document.getElementById("editError");
+  errEl.hidden = true;
+
+  const name = document.getElementById("eName").value.trim();
+  if (!name) { errEl.innerText = "Ad boş olamaz."; errEl.hidden = false; return; }
+
+  const changes = {
+    name,
+    image: document.getElementById("eImage").value.trim(),
+    released: document.getElementById("eReleased").value.trim(),
+    genres: document.getElementById("eGenres").value.split(",").map(s => s.trim()).filter(Boolean),
+    description: document.getElementById("eDescription").value.trim()
+  };
+
+  if (MODE === "supabase") {
+    const { error } = await sb.from("games").update(changes).eq("id", g.id);
+    if (error) { errEl.innerText = "Kaydedilemedi: " + error.message; errEl.hidden = false; return; }
+  } else {
+    dirty = true;
+    updateSaveBar();
+  }
+
+  Object.assign(g, changes);
+  renderStats();
+  applyFilters();
+  closeModal("editModal");
+  openGameDetail(g);   // refresh the detail view with the new data
 }
