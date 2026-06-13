@@ -442,6 +442,10 @@ function render(games) {
 
     card.appendChild(cover);
     card.appendChild(info);
+    card.addEventListener("click", e => {
+      if (e.target.closest(".act")) return;   // let the toggle buttons do their thing
+      openGameDetail(g);
+    });
     frag.appendChild(card);
   });
 
@@ -620,6 +624,20 @@ document.getElementById("bShelf").addEventListener("change", e => { bookState.sh
 document.getElementById("bStatus").addEventListener("change", e => { bookState.status = e.target.value; applyBookFilters(); });
 document.getElementById("bSort").addEventListener("change", e => { bookState.sort = e.target.value; applyBookFilters(); });
 document.getElementById("bookSubmit").addEventListener("click", submitBook);
+
+// ---- light / dark theme ----
+function applyTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  document.getElementById("themeBtn").innerText = theme === "light" ? "☾" : "☀";
+}
+let theme = "dark";
+try { theme = localStorage.getItem("theme") || "dark"; } catch (e) {}
+applyTheme(theme);
+document.getElementById("themeBtn").addEventListener("click", () => {
+  theme = theme === "light" ? "dark" : "light";
+  applyTheme(theme);
+  try { localStorage.setItem("theme", theme); } catch (e) {}
+});
 
 // ---- mode switch ----
 document.querySelectorAll("#modeSwitch .ms-btn").forEach(btn => {
@@ -1182,4 +1200,41 @@ async function ensureStats() {
   } catch (err) {
     app.innerHTML = '<div class="empty"><strong>İstatistik yüklenemedi</strong>' + esc(err.message) + "</div>";
   }
+}
+
+/* ============================================================
+   GAME DETAIL VIEW
+   ============================================================ */
+
+function openGameDetail(g) {
+  document.getElementById("gdCover").src = g.image || placeholderFor(g.name);
+  document.getElementById("gdCover").alt = g.name || "";
+  document.getElementById("gdTitle").innerText = g.name || "";
+
+  const meta = [];
+  const yr = g.released ? String(g.released).slice(0, 4) : null;
+  if (yr) meta.push(`<span class="yr">${esc(yr)}</span>`);
+  if (g.favorite) meta.push("★ Favori");
+  if (g.played) meta.push("✔ Oynandı");
+  document.getElementById("gdMeta").innerHTML = meta.map(m => `<span>${m}</span>`).join("");
+
+  const genres = g.genres || [];
+  document.getElementById("gdGenres").innerHTML =
+    genres.map(x => `<span class="detail-genre">${esc(x)}</span>`).join("");
+
+  document.getElementById("gdPlatforms").innerHTML = (g.copies || []).map(c =>
+    `<span class="badge"><span class="dot ${isPlayStation(c.platform) ? "dot-ps" : "dot-pc"}"></span>${esc(copyLabel(c))}</span>`
+  ).join("");
+
+  const summary = (g.description || "").trim();
+  const sumEl = document.getElementById("gdSummary");
+  sumEl.innerText = summary || "Özet bilgisi yok. (enrich_games.py ile doldurabilirsin.)";
+  sumEl.classList.toggle("muted-text", !summary);
+
+  const extra = [];
+  if ((g.dlc || []).length) extra.push(`${g.dlc.length} DLC`);
+  if ((g.edition || []).length) extra.push("Sürümler: " + g.edition.join(", "));
+  document.getElementById("gdExtra").innerText = extra.join("   ·   ");
+
+  openModal("gameDetail");
 }

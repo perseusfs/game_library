@@ -36,6 +36,7 @@
             <span class="search-icon" aria-hidden="true">⌕</span>
             <input id="search" type="search" placeholder="Oyun ara…" aria-label="Search">
           </div>
+          <button class="btn btn-soft icon-btn" id="themeBtn" title="Tema değiştir" aria-label="Tema değiştir">☾</button>
           <button class="btn btn-soft" id="addBtn" hidden>+ Ekle</button>
           <button class="btn btn-soft" id="loginBtn" hidden>Giriş yap</button>
         </div>
@@ -192,6 +193,24 @@
       <div class="modal-actions">
         <button class="btn btn-ghost" data-close="bookModal">Vazgeç</button>
         <button class="btn btn-primary" id="bookSubmit">Kaydet</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- game detail -->
+  <div class="modal" id="gameDetail" hidden>
+    <div class="modal-card modal-detail">
+      <button class="detail-close" data-close="gameDetail" aria-label="Kapat">✕</button>
+      <div class="detail-grid">
+        <div class="detail-cover"><img id="gdCover" alt=""></div>
+        <div class="detail-body">
+          <h2 class="detail-title" id="gdTitle"></h2>
+          <div class="detail-meta" id="gdMeta"></div>
+          <div class="detail-genres" id="gdGenres"></div>
+          <div class="detail-platforms badges" id="gdPlatforms"></div>
+          <p class="detail-summary" id="gdSummary"></p>
+          <div class="detail-extra" id="gdExtra"></div>
+        </div>
       </div>
     </div>
   </div>

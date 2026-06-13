@@ -836,3 +836,77 @@ body.lib-stats .wordmark { font-family: "Bricolage Grotesque", sans-serif; }
 #stats-view[hidden] { display: none; }
 
 @media (max-width: 760px) { .panels { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   LIGHT THEME (toggle via html[data-theme="light"])
+   ============================================================ */
+
+.icon-btn { width: 40px; padding: 0; font-size: 16px; line-height: 1; }
+
+html[data-theme="light"] {
+  --bg:        #f3f2ee;
+  --bg-glow:   #ffffff;
+  --surface:   #ffffff;
+  --surface-2: #ecedf1;
+  --border:    rgba(20, 24, 33, 0.12);
+  --border-2:  rgba(20, 24, 33, 0.22);
+  --text:  #1e2430;
+  --muted: #5b6473;
+  --faint: #9aa1ad;
+  --shadow: 0 14px 34px -20px rgba(20, 24, 33, 0.30);
+}
+html[data-theme="light"] .masthead { background: rgba(255, 255, 255, 0.82); }
+html[data-theme="light"] .btn-primary { color: #fff; }
+html[data-theme="light"] .ms-btn.active { color: #fff; }
+html[data-theme="light"] body.lib-books .ms-btn.active { color: #fff; }
+
+/* keep the coral focus ring subtle on white */
+html[data-theme="light"] #search:focus { box-shadow: 0 0 0 3px var(--accent-soft); }
+
+/* ============================================================
+   GAME DETAIL VIEW
+   ============================================================ */
+
+.card { cursor: pointer; }
+
+.modal-detail { max-width: 760px; padding: 0; overflow: hidden; position: relative; }
+.detail-grid { display: grid; grid-template-columns: 250px 1fr; }
+.detail-cover { background: var(--surface-2); }
+.detail-cover img { width: 100%; height: 100%; object-fit: cover; display: block; aspect-ratio: 2 / 3; }
+.detail-body { padding: 24px 26px; max-height: 82vh; overflow: auto; }
+
+.detail-title {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 23px; font-weight: 700; margin: 0 0 10px; line-height: 1.15;
+}
+body.lib-books .detail-title { font-family: "Fraunces", serif; }
+
+.detail-meta { display: flex; flex-wrap: wrap; gap: 12px; font-size: 13px; color: var(--muted); margin-bottom: 14px; }
+.detail-meta .yr { font-family: "JetBrains Mono", monospace; color: var(--text); }
+
+.detail-genres { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.detail-genre {
+  background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: 999px; padding: 3px 11px; font-size: 12px; color: var(--muted);
+}
+
+.detail-platforms { margin-bottom: 16px; }
+
+.detail-summary { font-size: 14px; line-height: 1.65; color: var(--text); white-space: pre-wrap; margin: 0; }
+.detail-summary.muted-text { color: var(--muted); font-style: italic; }
+
+.detail-extra { margin-top: 16px; font-size: 13px; color: var(--muted); font-family: "JetBrains Mono", monospace; }
+
+.detail-close {
+  position: absolute; top: 12px; right: 12px; z-index: 3;
+  width: 32px; height: 32px; border-radius: 9px; cursor: pointer;
+  background: rgba(8, 9, 14, 0.55); border: 1px solid var(--border-2); color: #fff;
+  font-size: 14px; backdrop-filter: blur(4px);
+}
+.detail-close:hover { background: rgba(8, 9, 14, 0.8); }
+
+@media (max-width: 560px) {
+  .detail-grid { grid-template-columns: 1fr; }
+  .detail-cover img { aspect-ratio: 16 / 9; }
+  .detail-body { max-height: 60vh; }
+}
